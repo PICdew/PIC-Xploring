@@ -1,0 +1,10 @@
+_pullUpConfig: CODE, 167 0 23
+_interruptConfig: CODE, 209 0 2
+_ISR: CODE, 24 0 53
+_timer0Config: CODE, 112 0 29
+_main: CODE, 203 0 6
+__initialization: CODE, 17 0 5
+_servoDirection: CODE, 77 0 35
+_switchCommands: CODE, 141 0 26
+_portaConfig: CODE, 190 0 13
+Total: 192

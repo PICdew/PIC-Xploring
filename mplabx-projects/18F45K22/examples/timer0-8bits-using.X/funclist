@@ -1,0 +1,8 @@
+_interruptConfig: CODE, 256 0 12
+_ISR: CODE, 8 0 152
+_generalConfig: CODE, 194 0 30
+_main: CODE, 224 0 18
+_timer0Init: CODE, 242 0 14
+__initialization: CODE, 164 0 24
+_ledBlockConfig: CODE, 268 0 8
+Total: 258

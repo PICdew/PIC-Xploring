@@ -1,0 +1,7 @@
+_spiTransmit: CODE, 165 0 37
+_ISR: CODE, 241 0 17
+_spiPinsConfig: CODE, 222 0 19
+_main: CODE, 202 0 20
+_setUpNrf24l01: CODE, 20 0 145
+__initialization: CODE, 17 0 1
+Total: 239

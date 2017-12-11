@@ -1,0 +1,7 @@
+_ISR: CODE, 23 0 25
+_main: CODE, 76 0 7
+__initialization: CODE, 17 0 4
+_timer1Init: CODE, 63 0 13
+_interruptInit: CODE, 83 0 3
+_ccpCompareInit: CODE, 48 0 15
+Total: 67

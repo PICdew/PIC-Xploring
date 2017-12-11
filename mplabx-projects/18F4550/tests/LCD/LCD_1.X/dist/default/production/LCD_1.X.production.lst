@@ -1,0 +1,550 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.32 build 58300 
+                                                                                               Thu Aug 14 21:27:16 2014
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 58300
+     1                           	processor	18F4550
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	smallconst,global,reloc=2,class=SMALLCONST,delta=1
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     8                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     9                           	psect	text1,global,reloc=2,class=CODE,delta=1
+    10                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    11                           	psect	text3,global,reloc=2,class=CODE,delta=1
+    12                           	psect	text4,global,reloc=2,class=CODE,delta=1
+    13                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    14                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    15  0000                     
+    16                           	psect	smallconst
+    17  000800                     __psmallconst:
+    18                           	opt stack 0
+    19  000800  00                 	db	0
+    20  000801                     _highT0Value:
+    21                           	opt stack 0
+    22  000801  C2                 	db	194
+    23  000802                     __end_of_highT0Value:
+    24                           	opt stack 0
+    25  000802                     _lowT0Value:
+    26                           	opt stack 0
+    27  000802  F7                 	db	247
+    28  000803                     __end_of_lowT0Value:
+    29                           	opt stack 0
+    30  0000                     _ADCON1	set	4033
+    31  0000                     _INTCONbits	set	4082
+    32  0000                     _LATBbits	set	3978
+    33  0000                     _PORTB	set	3969
+    34  0000                     _PORTBbits	set	3969
+    35  0000                     _T0CON	set	4053
+    36  0000                     _T0CONbits	set	4053
+    37  0000                     _TMR0H	set	4055
+    38  0000                     _TMR0L	set	4054
+    39  0000                     _TRISB	set	3987
+    40                           
+    41                           ; #config settings
+    42  000803  00                 	db	0	; dummy byte at the end
+    43  0000                     
+    44                           	psect	cinit
+    45  000852                     __pcinit:
+    46                           	opt stack 0
+    47  000852                     start_initialization:
+    48                           	opt stack 0
+    49  000852                     __initialization:
+    50                           	opt stack 0
+    51  000852                     end_of_initialization:
+    52                           	opt stack 0
+    53  000852                     __end_of__initialization:
+    54                           	opt stack 0
+    55  000852  0E00               	movlw	low (__Lsmallconst shr (0+16))
+    56  000854  6EF8               	movwf	tblptru,c
+    57  000856  0E08               	movlw	high __Lsmallconst
+    58  000858  6EF7               	movwf	tblptrh,c
+    59  00085A  0100               	movlb	0
+    60  00085C  EF02  F004         	goto	_main	;jump to C main() function
+    61                           tblptru	equ	0xFF8
+    62                           tblptrh	equ	0xFF7
+    63                           
+    64                           	psect	cstackCOMRAM
+    65  000001                     __pcstackCOMRAM:
+    66                           	opt stack 0
+    67  000001                     ??_main:
+    68                           
+    69                           ; 0 bytes @ 0x0
+    70  000001                     	ds	1
+    71                           tblptru	equ	0xFF8
+    72                           tblptrh	equ	0xFF7
+    73                           
+    74 ;;
+    75 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+    76 ;;
+    77 ;; *************** function _main *****************
+    78 ;; Defined at:
+    79 ;;		line 63 in file "main.c"
+    80 ;; Parameters:    Size  Location     Type
+    81 ;;		None
+    82 ;; Auto vars:     Size  Location     Type
+    83 ;;		None
+    84 ;; Return value:  Size  Location     Type
+    85 ;;		None               void
+    86 ;; Registers used:
+    87 ;;		wreg, status,2, status,0, tblptrl, tblptrh, tblptru, cstack
+    88 ;; Tracked objects:
+    89 ;;		On entry : 0/0
+    90 ;;		On exit  : 0/0
+    91 ;;		Unchanged: 0/0
+    92 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+    93 ;;      Params:         0       0       0       0       0       0       0       0       0
+    94 ;;      Locals:         0       0       0       0       0       0       0       0       0
+    95 ;;      Temps:          1       0       0       0       0       0       0       0       0
+    96 ;;      Totals:         1       0       0       0       0       0       0       0       0
+    97 ;;Total ram usage:        1 bytes
+    98 ;; Hardware stack levels required when called:    3
+    99 ;; This function calls:
+   100 ;;		_configs
+   101 ;;		_timer0Configs
+   102 ;; This function is called by:
+   103 ;;		Startup code after reset
+   104 ;; This function uses a non-reentrant model
+   105 ;;
+   106                           
+   107                           	psect	text0
+   108  000804                     __ptext0:
+   109                           	opt stack 0
+   110  000804                     _main:
+   111                           	opt stack 28
+   112                           
+   113                           ;main.c: 64: configs();
+   114                           
+   115                           ;incstack = 0
+   116  000804  EC21  F004         	call	_configs	;wreg free
+   117  000808                     l639:
+   118                           
+   119                           ;main.c: 66: if (INTCONbits.TMR0IF) {
+   120  000808  A4F2               	btfss	intcon,2,c	;volatile
+   121  00080A  D7FE               	goto	l639
+   122                           
+   123                           ;main.c: 67: PORTBbits.RB0 = ~LATBbits.LATB0;
+   124  00080C  A08A               	btfss	3978,0,c	;volatile
+   125  00080E  D002               	goto	u20
+   126  000810  0E01               	movlw	1
+   127  000812  D001               	goto	u26
+   128  000814                     u20:
+   129  000814  0E00               	movlw	0
+   130  000816                     u26:
+   131  000816  0AFF               	xorlw	255
+   132  000818  6E01               	movwf	??_main& (0+255),c
+   133  00081A  5081               	movf	3969,w,c	;volatile
+   134  00081C  1801               	xorwf	??_main,w,c
+   135  00081E  0BFE               	andlw	-2
+   136  000820  1801               	xorwf	??_main,w,c
+   137  000822  6E81               	movwf	3969,c	;volatile
+   138                           
+   139                           ;main.c: 68: timer0Configs();
+   140  000824  EC15  F004         	call	_timer0Configs	;wreg free
+   141  000828  D7EF               	goto	l639
+   142  00082A                     __end_of_main:
+   143                           	opt stack 0
+   144                           tblptru	equ	0xFF8
+   145                           tblptrh	equ	0xFF7
+   146                           intcon	equ	0xFF2
+   147                           
+   148 ;; *************** function _configs *****************
+   149 ;; Defined at:
+   150 ;;		line 55 in file "main.c"
+   151 ;; Parameters:    Size  Location     Type
+   152 ;;		None
+   153 ;; Auto vars:     Size  Location     Type
+   154 ;;		None
+   155 ;; Return value:  Size  Location     Type
+   156 ;;		None               void
+   157 ;; Registers used:
+   158 ;;		wreg, status,2, tblptrl, tblptrh, tblptru, cstack
+   159 ;; Tracked objects:
+   160 ;;		On entry : 0/0
+   161 ;;		On exit  : 0/0
+   162 ;;		Unchanged: 0/0
+   163 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   164 ;;      Params:         0       0       0       0       0       0       0       0       0
+   165 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   166 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   167 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   168 ;;Total ram usage:        0 bytes
+   169 ;; Hardware stack levels used:    1
+   170 ;; Hardware stack levels required when called:    2
+   171 ;; This function calls:
+   172 ;;		_portbConfigs
+   173 ;;		_timerConfigs
+   174 ;; This function is called by:
+   175 ;;		_main
+   176 ;; This function uses a non-reentrant model
+   177 ;;
+   178                           
+   179                           	psect	text1
+   180  000842                     __ptext1:
+   181                           	opt stack 0
+   182  000842                     _configs:
+   183                           	opt stack 28
+   184                           
+   185                           ;main.c: 56: ADCON1 = 0X0F;
+   186                           
+   187                           ;incstack = 0
+   188  000842  0E0F               	movlw	15
+   189  000844  6EC1               	movwf	4033,c	;volatile
+   190                           
+   191                           ;main.c: 57: portbConfigs();
+   192  000846  EC35  F004         	call	_portbConfigs	;wreg free
+   193                           
+   194                           ;main.c: 58: timerConfigs();
+   195  00084A  EC30  F004         	call	_timerConfigs	;wreg free
+   196                           
+   197                           ;main.c: 59: T0CONbits.TMR0ON = 1;
+   198  00084E  8ED5               	bsf	4053,7,c	;volatile
+   199  000850  0012               	return	
+   200  000852                     __end_of_configs:
+   201                           	opt stack 0
+   202                           tblptru	equ	0xFF8
+   203                           tblptrh	equ	0xFF7
+   204                           intcon	equ	0xFF2
+   205                           
+   206 ;; *************** function _timerConfigs *****************
+   207 ;; Defined at:
+   208 ;;		line 43 in file "main.c"
+   209 ;; Parameters:    Size  Location     Type
+   210 ;;		None
+   211 ;; Auto vars:     Size  Location     Type
+   212 ;;		None
+   213 ;; Return value:  Size  Location     Type
+   214 ;;		None               void
+   215 ;; Registers used:
+   216 ;;		wreg, status,2, tblptrl, tblptrh, tblptru, cstack
+   217 ;; Tracked objects:
+   218 ;;		On entry : 0/0
+   219 ;;		On exit  : 0/0
+   220 ;;		Unchanged: 0/0
+   221 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   222 ;;      Params:         0       0       0       0       0       0       0       0       0
+   223 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   224 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   225 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   226 ;;Total ram usage:        0 bytes
+   227 ;; Hardware stack levels used:    1
+   228 ;; Hardware stack levels required when called:    1
+   229 ;; This function calls:
+   230 ;;		_timer0Configs
+   231 ;; This function is called by:
+   232 ;;		_configs
+   233 ;; This function uses a non-reentrant model
+   234 ;;
+   235                           
+   236                           	psect	text2
+   237  000860                     __ptext2:
+   238                           	opt stack 0
+   239  000860                     _timerConfigs:
+   240                           	opt stack 28
+   241                           
+   242                           ;main.c: 44: T0CON = 0B00000100;
+   243                           
+   244                           ;incstack = 0
+   245  000860  0E04               	movlw	4
+   246  000862  6ED5               	movwf	4053,c	;volatile
+   247                           
+   248                           ;main.c: 45: timer0Configs();
+   249  000864  EC15  F004         	call	_timer0Configs	;wreg free
+   250  000868  0012               	return	
+   251  00086A                     __end_of_timerConfigs:
+   252                           	opt stack 0
+   253                           tblptru	equ	0xFF8
+   254                           tblptrh	equ	0xFF7
+   255                           intcon	equ	0xFF2
+   256                           
+   257 ;; *************** function _timer0Configs *****************
+   258 ;; Defined at:
+   259 ;;		line 36 in file "main.c"
+   260 ;; Parameters:    Size  Location     Type
+   261 ;;		None
+   262 ;; Auto vars:     Size  Location     Type
+   263 ;;		None
+   264 ;; Return value:  Size  Location     Type
+   265 ;;		None               void
+   266 ;; Registers used:
+   267 ;;		wreg, tblptrl, tblptrh, tblptru
+   268 ;; Tracked objects:
+   269 ;;		On entry : 0/0
+   270 ;;		On exit  : 0/0
+   271 ;;		Unchanged: 0/0
+   272 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   273 ;;      Params:         0       0       0       0       0       0       0       0       0
+   274 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   275 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   276 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   277 ;;Total ram usage:        0 bytes
+   278 ;; Hardware stack levels used:    1
+   279 ;; This function calls:
+   280 ;;		Nothing
+   281 ;; This function is called by:
+   282 ;;		_timerConfigs
+   283 ;;		_main
+   284 ;; This function uses a non-reentrant model
+   285 ;;
+   286                           
+   287                           	psect	text3
+   288  00082A                     __ptext3:
+   289                           	opt stack 0
+   290  00082A                     _timer0Configs:
+   291                           	opt stack 30
+   292                           
+   293                           ;main.c: 37: INTCONbits.TMR0IF = 0;
+   294                           
+   295                           ;incstack = 0
+   296  00082A  94F2               	bcf	intcon,2,c	;volatile
+   297                           
+   298                           ;main.c: 38: TMR0H = highT0Value;
+   299  00082C  0E01               	movlw	low _highT0Value
+   300  00082E  6EF6               	movwf	tblptrl,c
+   301  000830                     	if	0	;There is only one active tblptr byte
+   302  000830                     	endif
+   303  000830                     	if	0	;There are less than 3 active tblptr bytes
+   304  000830                     	endif
+   305  000830  0008               	tblrd		*
+   306  000832  CFF5 FFD7          	movff	tablat,4055	;volatile
+   307                           
+   308                           ;main.c: 39: TMR0L = lowT0Value;
+   309  000836  0E02               	movlw	low _lowT0Value
+   310  000838  6EF6               	movwf	tblptrl,c
+   311  00083A                     	if	0	;There is only one active tblptr byte
+   312  00083A                     	endif
+   313  00083A                     	if	0	;There are less than 3 active tblptr bytes
+   314  00083A                     	endif
+   315  00083A  0008               	tblrd		*
+   316  00083C  CFF5 FFD6          	movff	tablat,4054	;volatile
+   317  000840  0012               	return	
+   318  000842                     __end_of_timer0Configs:
+   319                           	opt stack 0
+   320                           tblptru	equ	0xFF8
+   321                           tblptrh	equ	0xFF7
+   322                           tblptrl	equ	0xFF6
+   323                           tablat	equ	0xFF5
+   324                           intcon	equ	0xFF2
+   325                           
+   326 ;; *************** function _portbConfigs *****************
+   327 ;; Defined at:
+   328 ;;		line 49 in file "main.c"
+   329 ;; Parameters:    Size  Location     Type
+   330 ;;		None
+   331 ;; Auto vars:     Size  Location     Type
+   332 ;;		None
+   333 ;; Return value:  Size  Location     Type
+   334 ;;		None               void
+   335 ;; Registers used:
+   336 ;;		wreg, status,2
+   337 ;; Tracked objects:
+   338 ;;		On entry : 0/0
+   339 ;;		On exit  : 0/0
+   340 ;;		Unchanged: 0/0
+   341 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   342 ;;      Params:         0       0       0       0       0       0       0       0       0
+   343 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   344 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   345 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   346 ;;Total ram usage:        0 bytes
+   347 ;; Hardware stack levels used:    1
+   348 ;; This function calls:
+   349 ;;		Nothing
+   350 ;; This function is called by:
+   351 ;;		_configs
+   352 ;; This function uses a non-reentrant model
+   353 ;;
+   354                           
+   355                           	psect	text4
+   356  00086A                     __ptext4:
+   357                           	opt stack 0
+   358  00086A                     _portbConfigs:
+   359                           	opt stack 29
+   360                           
+   361                           ;main.c: 50: TRISB = 0B00000000;
+   362                           
+   363                           ;incstack = 0
+   364  00086A  0E00               	movlw	0
+   365  00086C  6E93               	movwf	3987,c	;volatile
+   366                           
+   367                           ;main.c: 51: PORTB = 0B00000000;
+   368  00086E  0E00               	movlw	0
+   369  000870  6E81               	movwf	3969,c	;volatile
+   370  000872  0012               	return	
+   371  000874                     __end_of_portbConfigs:
+   372                           	opt stack 0
+   373                           tblptru	equ	0xFF8
+   374                           tblptrh	equ	0xFF7
+   375                           tblptrl	equ	0xFF6
+   376                           tablat	equ	0xFF5
+   377                           intcon	equ	0xFF2
+   378                           tblptru	equ	0xFF8
+   379                           tblptrh	equ	0xFF7
+   380                           tblptrl	equ	0xFF6
+   381                           tablat	equ	0xFF5
+   382                           intcon	equ	0xFF2
+   383                           
+   384                           	psect	rparam
+   385  0000                     tblptru	equ	0xFF8
+   386                           tblptrh	equ	0xFF7
+   387                           tblptrl	equ	0xFF6
+   388                           tablat	equ	0xFF5
+   389                           intcon	equ	0xFF2
+
+
+Data Sizes:
+    Strings     0
+    Constant    2
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      1       1
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 1     1      0       0
+                                              0 COMRAM     1     1      0
+                            _configs
+                      _timer0Configs
+ ---------------------------------------------------------------------------------
+ (1) _configs                                              0     0      0       0
+                       _portbConfigs
+                       _timerConfigs
+ ---------------------------------------------------------------------------------
+ (2) _timerConfigs                                         0     0      0       0
+                      _timer0Configs
+ ---------------------------------------------------------------------------------
+ (1) _timer0Configs                                        0     0      0       0
+ ---------------------------------------------------------------------------------
+ (2) _portbConfigs                                         0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _configs
+     _portbConfigs
+     _timerConfigs
+       _timer0Configs
+   _timer0Configs
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F      1       1       1        1.1%
+STACK                0      0       0       2        0.0%
+DATA                 0      0       0       3        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK6           100      0       0      16        0.0%
+BANK6              100      0       0      17        0.0%
+BITBANK7           100      0       0      18        0.0%
+BANK7              100      0       0      19        0.0%
+ABS                  0      0       0      20        0.0%
+BIGRAM             7FF      0       0      21        0.0%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.32 build 58300 
+Symbol Table                                                                                   Thu Aug 14 21:27:16 2014
+
+                     u20 0814                       u26 0816              __CFG_BOR$ON 000000  
+            __CFG_BORV$1 000000                      l639 0808             __CFG_FOSC$HS 000000  
+           __CFG_LVP$OFF 000000             __CFG_WDT$OFF 000000             __CFG_PWRT$ON 000000  
+                   _main 0804                     start 0000            __CFG_MCLRE$ON 000000  
+                  ?_main 0001                    _T0CON 000FD5                    _TMR0H 000FD7  
+                  _TMR0L 000FD6                    _PORTB 000F81                    _TRISB 000F93  
+        __end_of_configs 0852                    tablat 000FF5          __initialization 0852  
+           __end_of_main 082A                   ??_main 0001            __activetblptr 000001  
+                 _ADCON1 000FC1                ??_configs 0001             __mediumconst 0000  
+                 tblptrh 000FF7                   tblptrl 000FF6                   tblptru 000FF8  
+             __accesstop 0060  __end_of__initialization 0852          __CFG_PBADEN$OFF 000000  
+         __pcstackCOMRAM 0001    __end_of_timer0Configs 0842                  __Hparam 0000  
+                __Lparam 0000               _lowT0Value 0802             __psmallconst 0800  
+                __pcinit 0852                  __ramtop 0800                  __ptext0 0804  
+                __ptext1 0842                  __ptext2 0860                  __ptext3 082A  
+                __ptext4 086A                  _configs 0842                _T0CONbits 000FD5  
+   end_of_initialization 0852            ?_timerConfigs 0001            ?_portbConfigs 0001  
+              _PORTBbits 000F81           ??_timerConfigs 0001           ??_portbConfigs 0001  
+    start_initialization 0852      __end_of_highT0Value 0802   __size_of_timer0Configs 0018  
+   __end_of_timerConfigs 086A              _highT0Value 0801                 ?_configs 0001  
+            __smallconst 0800     __end_of_portbConfigs 0874                 _LATBbits 000F8A  
+          _timer0Configs 082A                 __Hrparam 0000                 __Lrparam 0000  
+           __Lsmallconst 0800           ?_timer0Configs 0001         __size_of_configs 0010  
+     __end_of_lowT0Value 0803            __size_of_main 0026    __size_of_timerConfigs 000A  
+  __CFG_CPUDIV$OSC1_PLL2 000000               _INTCONbits 000FF2    __size_of_portbConfigs 000A  
+           _timerConfigs 0860          ??_timer0Configs 0001             _portbConfigs 086A  

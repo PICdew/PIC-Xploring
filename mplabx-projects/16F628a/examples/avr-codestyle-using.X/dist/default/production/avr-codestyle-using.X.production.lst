@@ -1,0 +1,1399 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.33 build 59893 
+                                                                                               Wed Jan 07 12:09:50 2015
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 59893
+     1                           	processor	16F628A
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	idataCOMMON,global,class=CODE,delta=2
+     5                           	psect	strings,global,class=STRING,delta=2
+     6                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     7                           	psect	bssCOMMON,global,class=COMMON,space=1,delta=1
+     8                           	psect	dataCOMMON,global,class=COMMON,space=1,delta=1
+     9                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+    10                           	psect	maintext,global,class=CODE,split=1,delta=2
+    11                           	psect	text1,local,class=CODE,merge=1,delta=2
+    12                           	psect	text2,local,class=CODE,merge=1,delta=2
+    13                           	psect	text3,local,class=CODE,merge=1,delta=2
+    14                           	psect	text4,local,class=CODE,merge=1,delta=2
+    15                           	psect	text5,local,class=CODE,merge=1,delta=2
+    16                           	psect	text6,local,class=CODE,merge=1,delta=2
+    17                           	psect	text7,local,class=CODE,merge=1,delta=2
+    18                           	psect	text8,local,class=CODE,merge=1,delta=2
+    19                           	psect	text9,local,class=CODE,merge=1,delta=2
+    20                           	psect	text10,local,class=CODE,merge=1,delta=2
+    21                           	psect	text11,local,class=CODE,merge=1,delta=2
+    22                           	psect	intentry,global,class=CODE,delta=2
+    23                           	dabs	1,0x7E,2
+    24  0000                     	;# 
+    25  0001                     	;# 
+    26  0002                     	;# 
+    27  0003                     	;# 
+    28  0004                     	;# 
+    29  0005                     	;# 
+    30  0006                     	;# 
+    31  000A                     	;# 
+    32  000B                     	;# 
+    33  000C                     	;# 
+    34  000E                     	;# 
+    35  000E                     	;# 
+    36  000F                     	;# 
+    37  0010                     	;# 
+    38  0011                     	;# 
+    39  0012                     	;# 
+    40  0015                     	;# 
+    41  0015                     	;# 
+    42  0016                     	;# 
+    43  0017                     	;# 
+    44  0018                     	;# 
+    45  0019                     	;# 
+    46  001A                     	;# 
+    47  001F                     	;# 
+    48  0081                     	;# 
+    49  0085                     	;# 
+    50  0086                     	;# 
+    51  008C                     	;# 
+    52  008E                     	;# 
+    53  0092                     	;# 
+    54  0098                     	;# 
+    55  0099                     	;# 
+    56  009A                     	;# 
+    57  009B                     	;# 
+    58  009C                     	;# 
+    59  009D                     	;# 
+    60  009F                     	;# 
+    61                           
+    62                           	psect	idataCOMMON
+    63  0141                     __pidataCOMMON:	
+    64                           
+    65                           ;initializer for _tmr1High
+    66  0141  34FF               	retlw	255
+    67                           
+    68                           ;initializer for _tmr1Low
+    69  0142  3483               	retlw	131
+    70  001F                     _CMCON	set	31
+    71  000B                     _INTCON	set	11
+    72  000C                     _PIR1	set	12
+    73  0005                     _PORTA	set	5
+    74  0006                     _PORTB	set	6
+    75  0018                     _RCSTA	set	24
+    76  0010                     _T1CON	set	16
+    77  000F                     _TMR1H	set	15
+    78  000E                     _TMR1L	set	14
+    79  0019                     _TXREG	set	25
+    80  0081                     _OPTION_REG	set	129
+    81  008E                     _PCON	set	142
+    82  008C                     _PIE1	set	140
+    83  0099                     _SPBRG	set	153
+    84  0085                     _TRISA	set	133
+    85  0086                     _TRISB	set	134
+    86  0098                     _TXSTA	set	152
+    87                           
+    88                           	psect	strings
+    89  0019                     __pstrings:	
+    90  0019                     stringtab:	
+    91  0019                     __stringtab:	
+    92  0019                     stringcode:	
+    93                           ;	String table - string pointers are 1 byte each
+    94                           
+    95  0019                     stringdir:	
+    96  0019  3000               	movlw	high stringdir
+    97  001A  008A               	movwf	10
+    98  001B  0804               	movf	4,w
+    99  001C  0A84               	incf	4,f
+   100  001D  0782               	addwf	2,f
+   101  001E                     __stringbase:	
+   102  001E  3400               	retlw	0
+   103  001F                     __end_of__stringtab:	
+   104  001F                     __stringdata:	
+   105  001F                     STR_1:	
+   106  001F  3454               	retlw	84	;'T'
+   107  0020  3475               	retlw	117	;'u'
+   108  0021  3420               	retlw	32	;' '
+   109  0022  3463               	retlw	99	;'c'
+   110  0023  3475               	retlw	117	;'u'
+   111  0024  346A               	retlw	106	;'j'
+   112  0025  346F               	retlw	111	;'o'
+   113  0026  3420               	retlw	32	;' '
+   114  0027  346E               	retlw	110	;'n'
+   115  0028  346F               	retlw	111	;'o'
+   116  0029  346D               	retlw	109	;'m'
+   117  002A  3465               	retlw	101	;'e'
+   118  002B  3420               	retlw	32	;' '
+   119  002C  34E9               	retlw	-23
+   120  002D  3420               	retlw	32	;' '
+   121  002E  344A               	retlw	74	;'J'
+   122  002F  3465               	retlw	101	;'e'
+   123  0030  346F               	retlw	111	;'o'
+   124  0031  3476               	retlw	118	;'v'
+   125  0032  34E1               	retlw	-31
+   126  0033  342C               	retlw	44	;','
+   127  0034  3420               	retlw	32	;' '
+   128  0035  3473               	retlw	115	;'s'
+   129  0036  346F               	retlw	111	;'o'
+   130  0037  346D               	retlw	109	;'m'
+   131  0038  3465               	retlw	101	;'e'
+   132  0039  346E               	retlw	110	;'n'
+   133  003A  3474               	retlw	116	;'t'
+   134  003B  3465               	retlw	101	;'e'
+   135  003C  3420               	retlw	32	;' '
+   136  003D  3454               	retlw	84	;'T'
+   137  003E  3475               	retlw	117	;'u'
+   138  003F  3420               	retlw	32	;' '
+   139  0040  34E9               	retlw	-23
+   140  0041  3473               	retlw	115	;'s'
+   141  0042  3420               	retlw	32	;' '
+   142  0043  346F               	retlw	111	;'o'
+   143  0044  3420               	retlw	32	;' '
+   144  0045  3441               	retlw	65	;'A'
+   145  0046  346C               	retlw	108	;'l'
+   146  0047  3474               	retlw	116	;'t'
+   147  0048  3469               	retlw	105	;'i'
+   148  0049  3473               	retlw	115	;'s'
+   149  004A  3473               	retlw	115	;'s'
+   150  004B  3469               	retlw	105	;'i'
+   151  004C  346D               	retlw	109	;'m'
+   152  004D  346F               	retlw	111	;'o'
+   153  004E  3420               	retlw	32	;' '
+   154  004F  3473               	retlw	115	;'s'
+   155  0050  346F               	retlw	111	;'o'
+   156  0051  3462               	retlw	98	;'b'
+   157  0052  3472               	retlw	114	;'r'
+   158  0053  3465               	retlw	101	;'e'
+   159  0054  3420               	retlw	32	;' '
+   160  0055  3474               	retlw	116	;'t'
+   161  0056  346F               	retlw	111	;'o'
+   162  0057  3464               	retlw	100	;'d'
+   163  0058  3461               	retlw	97	;'a'
+   164  0059  3420               	retlw	32	;' '
+   165  005A  3461               	retlw	97	;'a'
+   166  005B  3420               	retlw	32	;' '
+   167  005C  3474               	retlw	116	;'t'
+   168  005D  3465               	retlw	101	;'e'
+   169  005E  3472               	retlw	114	;'r'
+   170  005F  3472               	retlw	114	;'r'
+   171  0060  3461               	retlw	97	;'a'
+   172  0061  342E               	retlw	46	;'.'
+   173  0062  340A               	retlw	10
+   174  0063  3400               	retlw	0
+   175  0064                     __end_of__stringdata:	
+   176                           
+   177                           ; #config settings
+   178  0000                     
+   179                           	psect	cinit
+   180  0011                     start_initialization:	
+   181  0011                     __initialization:	
+   182                           
+   183                           ; Clear objects allocated to COMMON
+   184  0011  01F9               	clrf	__pbssCOMMON& (0+127)
+   185  0012  01FA               	clrf	(__pbssCOMMON+1)& (0+127)
+   186                           
+   187                           ; Initialize objects allocated to COMMON
+   188  0013  2141               	fcall	__pidataCOMMON	;fetch initializer
+   189  0014  00FB               	movwf	__pdataCOMMON& (0+127)
+   190  0015  2142               	fcall	__pidataCOMMON+1	;fetch initializer
+   191  0016  00FC               	movwf	(__pdataCOMMON+1)& (0+127)
+   192  0017                     end_of_initialization:	
+   193                           ;End of C runtime variable initialization code
+   194                           
+   195  0017                     __end_of__initialization:	
+   196  0017  0183               	clrf	3
+   197  0018  2864               	ljmp	_main	;jump to C main() function
+   198                           
+   199                           	psect	bssCOMMON
+   200  0079                     __pbssCOMMON:	
+   201  0079                     _timerCounter:	
+   202  0079                     	ds	2
+   203                           
+   204                           	psect	dataCOMMON
+   205  007B                     __pdataCOMMON:	
+   206  007B                     _tmr1High:	
+   207  007B                     	ds	1
+   208  007C                     _tmr1Low:	
+   209  007C                     	ds	1
+   210                           
+   211                           	psect	cstackCOMMON
+   212  0070                     __pcstackCOMMON:	
+   213  0070                     ?_usartInit:	
+   214  0070                     ?_timer1Init:	
+   215                           ; 0 bytes @ 0x0
+   216                           
+   217  0070                     ?_ledsConfig:	
+   218                           ; 0 bytes @ 0x0
+   219                           
+   220  0070                     ?_pullUpConfig:	
+   221                           ; 0 bytes @ 0x0
+   222                           
+   223  0070                     ?_ledsEnviando:	
+   224                           ; 0 bytes @ 0x0
+   225                           
+   226  0070                     ?_usartPutStringConst:	
+   227                           ; 0 bytes @ 0x0
+   228                           
+   229  0070                     ?_ledsEnviado:	
+   230                           ; 0 bytes @ 0x0
+   231                           
+   232  0070                     ?_ledsStandBy:	
+   233                           ; 0 bytes @ 0x0
+   234                           
+   235  0070                     ?_usartSend:	
+   236                           ; 0 bytes @ 0x0
+   237                           
+   238  0070                     ?_ISR:	
+   239                           ; 0 bytes @ 0x0
+   240                           
+   241  0070                     ??_ISR:	
+   242                           ; 0 bytes @ 0x0
+   243                           
+   244  0070                     ?_main:	
+   245                           ; 0 bytes @ 0x0
+   246                           
+   247                           
+   248                           ; 2 bytes @ 0x0
+   249  0070                     	ds	5
+   250  0075                     ??_usartInit:	
+   251  0075                     ??_timer1Init:	
+   252                           ; 0 bytes @ 0x5
+   253                           
+   254  0075                     ??_ledsConfig:	
+   255                           ; 0 bytes @ 0x5
+   256                           
+   257  0075                     ??_pullUpConfig:	
+   258                           ; 0 bytes @ 0x5
+   259                           
+   260  0075                     ?_setTimeOut:	
+   261                           ; 0 bytes @ 0x5
+   262                           
+   263  0075                     ??_ledsEnviando:	
+   264                           ; 0 bytes @ 0x5
+   265                           
+   266  0075                     ??_ledsEnviado:	
+   267                           ; 0 bytes @ 0x5
+   268                           
+   269  0075                     ??_ledsStandBy:	
+   270                           ; 0 bytes @ 0x5
+   271                           
+   272  0075                     ??_usartSend:	
+   273                           ; 0 bytes @ 0x5
+   274                           
+   275  0075                     usartSend@data:	
+   276                           ; 0 bytes @ 0x5
+   277                           
+   278  0075                     setTimeOut@interval:	
+   279                           ; 1 bytes @ 0x5
+   280                           
+   281                           
+   282                           ; 2 bytes @ 0x5
+   283  0075                     	ds	1
+   284  0076                     ??_usartPutStringConst:	
+   285                           
+   286                           ; 0 bytes @ 0x6
+   287  0076                     	ds	1
+   288  0077                     ??_setTimeOut:	
+   289  0077                     usartPutStringConst@dataPtr:	
+   290                           ; 0 bytes @ 0x7
+   291                           
+   292                           
+   293                           ; 1 bytes @ 0x7
+   294  0077                     	ds	1
+   295  0078                     ??_main:	
+   296                           
+   297                           ; 0 bytes @ 0x8
+   298  0078                     	ds	1
+   299                           
+   300                           	psect	maintext
+   301  0064                     __pmaintext:	
+   302 ;;
+   303 ;;Main: autosize = 0, tempsize = 1, incstack = 0, save=0
+   304 ;;
+   305 ;; *************** function _main *****************
+   306 ;; Defined at:
+   307 ;;		line 52 in file "main.c"
+   308 ;; Parameters:    Size  Location     Type
+   309 ;;		None
+   310 ;; Auto vars:     Size  Location     Type
+   311 ;;		None
+   312 ;; Return value:  Size  Location     Type
+   313 ;;                  2   60[COMMON] int 
+   314 ;; Registers used:
+   315 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   316 ;; Tracked objects:
+   317 ;;		On entry : 17F/0
+   318 ;;		On exit  : 0/0
+   319 ;;		Unchanged: 0/0
+   320 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   321 ;;      Params:         0       0       0       0
+   322 ;;      Locals:         0       0       0       0
+   323 ;;      Temps:          1       0       0       0
+   324 ;;      Totals:         1       0       0       0
+   325 ;;Total ram usage:        1 bytes
+   326 ;; Hardware stack levels required when called:    3
+   327 ;; This function calls:
+   328 ;;		_ledsConfig
+   329 ;;		_ledsEnviado
+   330 ;;		_ledsEnviando
+   331 ;;		_ledsStandBy
+   332 ;;		_pullUpConfig
+   333 ;;		_setTimeOut
+   334 ;;		_timer1Init
+   335 ;;		_usartInit
+   336 ;;		_usartPutStringConst
+   337 ;; This function is called by:
+   338 ;;		Startup code after reset
+   339 ;; This function uses a non-reentrant model
+   340 ;;
+   341                           
+   342                           
+   343                           ;psect for function _main
+   344  0064                     _main:	
+   345                           
+   346                           ;main.c: 53: CMCON |= (1 << 2 | 1 << 1 | 1 << 0);
+   347                           
+   348                           ;incstack = 0
+   349                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   350  0064  3007               	movlw	7
+   351  0065  00F8               	movwf	??_main
+   352  0066  0878               	movf	??_main,w
+   353  0067  1283               	bcf	3,5	;RP0=0, select bank0
+   354  0068  1303               	bcf	3,6	;RP1=0, select bank0
+   355  0069  049F               	iorwf	31,f	;volatile
+   356                           
+   357                           ;main.c: 54: usartInit();
+   358  006A  20E1               	fcall	_usartInit
+   359                           
+   360                           ;main.c: 55: timer1Init();
+   361  006B  208C               	fcall	_timer1Init
+   362                           
+   363                           ;main.c: 56: ledsConfig();
+   364  006C  2108               	fcall	_ledsConfig
+   365                           
+   366                           ;main.c: 57: pullUpConfig();
+   367  006D  2116               	fcall	_pullUpConfig
+   368  006E                     l645:	
+   369                           ;main.c: 58: while (1) {
+   370                           
+   371                           
+   372                           ;main.c: 59: if (!(PORTB & ((1 << 3)))) {
+   373  006E  1283               	bcf	3,5	;RP0=0, select bank0
+   374  006F  1303               	bcf	3,6	;RP1=0, select bank0
+   375  0070  1986               	btfsc	6,3	;volatile
+   376  0071  2886               	goto	l659
+   377                           
+   378                           ;main.c: 60: setTimeOut(20);
+   379  0072  3014               	movlw	20
+   380  0073  00F5               	movwf	setTimeOut@interval
+   381  0074  3000               	movlw	0
+   382  0075  00F6               	movwf	setTimeOut@interval+1
+   383  0076  20A9               	fcall	_setTimeOut
+   384                           
+   385                           ;main.c: 61: ledsEnviando();
+   386  0077  2131               	fcall	_ledsEnviando
+   387                           
+   388                           ;main.c: 62: usartPutStringConst("Tu cujo nome é Jeová, somente Tu és o Altissimo sobre 
+      +                          toda a terra.\n");
+   389  0078  3001               	movlw	(STR_1-__stringbase)& (0+255)
+   390  0079  20F8               	fcall	_usartPutStringConst
+   391                           
+   392                           ;main.c: 63: setTimeOut(200);
+   393  007A  30C8               	movlw	200
+   394  007B  00F5               	movwf	setTimeOut@interval
+   395  007C  3000               	movlw	0
+   396  007D  00F6               	movwf	setTimeOut@interval+1
+   397  007E  20A9               	fcall	_setTimeOut
+   398                           
+   399                           ;main.c: 64: ledsEnviado();
+   400  007F  2139               	fcall	_ledsEnviado
+   401                           
+   402                           ;main.c: 65: setTimeOut(200);
+   403  0080  30C8               	movlw	200
+   404  0081  00F5               	movwf	setTimeOut@interval
+   405  0082  3000               	movlw	0
+   406  0083  00F6               	movwf	setTimeOut@interval+1
+   407  0084  20A9               	fcall	_setTimeOut
+   408                           
+   409                           ;main.c: 66: ledsStandBy();
+   410  0085  2129               	fcall	_ledsStandBy
+   411  0086                     l659:	
+   412                           
+   413                           ;main.c: 67: }
+   414                           ;main.c: 68: setTimeOut(200);
+   415  0086  30C8               	movlw	200
+   416  0087  00F5               	movwf	setTimeOut@interval
+   417  0088  3000               	movlw	0
+   418  0089  00F6               	movwf	setTimeOut@interval+1
+   419  008A  20A9               	fcall	_setTimeOut
+   420  008B  286E               	goto	l645
+   421  008C                     __end_of_main:	
+   422                           ;main.c: 69: }
+   423                           ;main.c: 70: return 1;
+   424                           ;	Return value of _main is never used
+   425                           
+   426                           
+   427                           	psect	text1
+   428  00F8                     __ptext1:	
+   429 ;; *************** function _usartPutStringConst *****************
+   430 ;; Defined at:
+   431 ;;		line 92 in file "main.c"
+   432 ;; Parameters:    Size  Location     Type
+   433 ;;  dataPtr         1    wreg     PTR const unsigned char 
+   434 ;;		 -> STR_1(69), 
+   435 ;; Auto vars:     Size  Location     Type
+   436 ;;  dataPtr         1    7[COMMON] PTR const unsigned char 
+   437 ;;		 -> STR_1(69), 
+   438 ;; Return value:  Size  Location     Type
+   439 ;;		None               void
+   440 ;; Registers used:
+   441 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   442 ;; Tracked objects:
+   443 ;;		On entry : 0/0
+   444 ;;		On exit  : 0/0
+   445 ;;		Unchanged: 0/0
+   446 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   447 ;;      Params:         0       0       0       0
+   448 ;;      Locals:         1       0       0       0
+   449 ;;      Temps:          1       0       0       0
+   450 ;;      Totals:         2       0       0       0
+   451 ;;Total ram usage:        2 bytes
+   452 ;; Hardware stack levels used:    1
+   453 ;; Hardware stack levels required when called:    2
+   454 ;; This function calls:
+   455 ;;		_usartSend
+   456 ;; This function is called by:
+   457 ;;		_main
+   458 ;; This function uses a non-reentrant model
+   459 ;;
+   460                           
+   461                           
+   462                           ;psect for function _usartPutStringConst
+   463  00F8                     _usartPutStringConst:	
+   464                           
+   465                           ;incstack = 0
+   466                           ; Regs used in _usartPutStringConst: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   467                           ;usartPutStringConst@dataPtr stored from wreg
+   468  00F8  00F7               	movwf	usartPutStringConst@dataPtr
+   469  00F9                     l625:	
+   470                           ;main.c: 93: while (*dataPtr != '\0') {
+   471                           
+   472  00F9  0877               	movf	usartPutStringConst@dataPtr,w
+   473  00FA  0084               	movwf	4
+   474  00FB  2019               	fcall	stringdir
+   475  00FC  3800               	iorlw	0
+   476  00FD  1903               	btfsc	3,2
+   477  00FE  0008               	return
+   478                           
+   479                           ;main.c: 94: usartSend(*dataPtr);
+   480  00FF  0877               	movf	usartPutStringConst@dataPtr,w
+   481  0100  0084               	movwf	4
+   482  0101  2019               	fcall	stringdir
+   483  0102  2121               	fcall	_usartSend
+   484                           
+   485                           ;main.c: 95: dataPtr++;
+   486  0103  3001               	movlw	1
+   487  0104  00F6               	movwf	??_usartPutStringConst
+   488  0105  0876               	movf	??_usartPutStringConst,w
+   489  0106  07F7               	addwf	usartPutStringConst@dataPtr,f
+   490  0107  28F9               	goto	l625
+   491  0108                     __end_of_usartPutStringConst:	
+   492                           
+   493                           	psect	text2
+   494  0121                     __ptext2:	
+   495 ;; *************** function _usartSend *****************
+   496 ;; Defined at:
+   497 ;;		line 86 in file "main.c"
+   498 ;; Parameters:    Size  Location     Type
+   499 ;;  data            1    wreg     unsigned char 
+   500 ;; Auto vars:     Size  Location     Type
+   501 ;;  data            1    5[COMMON] unsigned char 
+   502 ;; Return value:  Size  Location     Type
+   503 ;;		None               void
+   504 ;; Registers used:
+   505 ;;		wreg
+   506 ;; Tracked objects:
+   507 ;;		On entry : 0/0
+   508 ;;		On exit  : 0/0
+   509 ;;		Unchanged: 0/0
+   510 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   511 ;;      Params:         0       0       0       0
+   512 ;;      Locals:         1       0       0       0
+   513 ;;      Temps:          0       0       0       0
+   514 ;;      Totals:         1       0       0       0
+   515 ;;Total ram usage:        1 bytes
+   516 ;; Hardware stack levels used:    1
+   517 ;; Hardware stack levels required when called:    1
+   518 ;; This function calls:
+   519 ;;		Nothing
+   520 ;; This function is called by:
+   521 ;;		_usartPutStringConst
+   522 ;; This function uses a non-reentrant model
+   523 ;;
+   524                           
+   525                           
+   526                           ;psect for function _usartSend
+   527  0121                     _usartSend:	
+   528                           
+   529                           ;incstack = 0
+   530                           ; Regs used in _usartSend: [wreg]
+   531                           ;usartSend@data stored from wreg
+   532  0121  00F5               	movwf	usartSend@data
+   533  0122                     l71:	
+   534                           ;main.c: 87: while (!(PIR1 & (1 << 4)));
+   535                           
+   536  0122  1283               	bcf	3,5	;RP0=0, select bank0
+   537  0123  1303               	bcf	3,6	;RP1=0, select bank0
+   538  0124  1E0C               	btfss	12,4	;volatile
+   539  0125  2922               	goto	l71
+   540                           
+   541                           ;main.c: 88: TXREG = data;
+   542  0126  0875               	movf	usartSend@data,w
+   543  0127  0099               	movwf	25	;volatile
+   544  0128  0008               	return
+   545  0129                     __end_of_usartSend:	
+   546                           
+   547                           	psect	text3
+   548  00E1                     __ptext3:	
+   549 ;; *************** function _usartInit *****************
+   550 ;; Defined at:
+   551 ;;		line 74 in file "main.c"
+   552 ;; Parameters:    Size  Location     Type
+   553 ;;		None
+   554 ;; Auto vars:     Size  Location     Type
+   555 ;;		None
+   556 ;; Return value:  Size  Location     Type
+   557 ;;		None               void
+   558 ;; Registers used:
+   559 ;;		wreg, status,2, status,0
+   560 ;; Tracked objects:
+   561 ;;		On entry : 0/0
+   562 ;;		On exit  : 0/0
+   563 ;;		Unchanged: 0/0
+   564 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   565 ;;      Params:         0       0       0       0
+   566 ;;      Locals:         0       0       0       0
+   567 ;;      Temps:          1       0       0       0
+   568 ;;      Totals:         1       0       0       0
+   569 ;;Total ram usage:        1 bytes
+   570 ;; Hardware stack levels used:    1
+   571 ;; Hardware stack levels required when called:    1
+   572 ;; This function calls:
+   573 ;;		Nothing
+   574 ;; This function is called by:
+   575 ;;		_main
+   576 ;; This function uses a non-reentrant model
+   577 ;;
+   578                           
+   579                           
+   580                           ;psect for function _usartInit
+   581  00E1                     _usartInit:	
+   582                           
+   583                           ;main.c: 75: SPBRG = ((4000000UL / (9600 * 16UL)) -1);
+   584                           
+   585                           ;incstack = 0
+   586                           ; Regs used in _usartInit: [wreg+status,2+status,0]
+   587  00E1  3019               	movlw	25
+   588  00E2  1683               	bsf	3,5	;RP0=1, select bank1
+   589  00E3  1303               	bcf	3,6	;RP1=0, select bank1
+   590  00E4  0099               	movwf	25	;volatile
+   591                           
+   592                           ;main.c: 77: TXSTA |= (1 << 2 | 1 << 5);
+   593  00E5  3024               	movlw	36
+   594  00E6  00F5               	movwf	??_usartInit
+   595  00E7  0875               	movf	??_usartInit,w
+   596  00E8  0498               	iorwf	24,f	;volatile
+   597                           
+   598                           ;main.c: 78: TXSTA &= ~(1 << 4 | 1 << 6);
+   599  00E9  30AF               	movlw	175
+   600  00EA  00F5               	movwf	??_usartInit
+   601  00EB  0875               	movf	??_usartInit,w
+   602  00EC  0598               	andwf	24,f	;volatile
+   603                           
+   604                           ;main.c: 81: RCSTA &= ~(1 << 3 | 1 << 6);
+   605  00ED  30B7               	movlw	183
+   606  00EE  00F5               	movwf	??_usartInit
+   607  00EF  0875               	movf	??_usartInit,w
+   608  00F0  1283               	bcf	3,5	;RP0=0, select bank0
+   609  00F1  1303               	bcf	3,6	;RP1=0, select bank0
+   610  00F2  0598               	andwf	24,f	;volatile
+   611                           
+   612                           ;main.c: 82: RCSTA |= (1 << 7 | 1 << 4);
+   613  00F3  3090               	movlw	144
+   614  00F4  00F5               	movwf	??_usartInit
+   615  00F5  0875               	movf	??_usartInit,w
+   616  00F6  0498               	iorwf	24,f	;volatile
+   617  00F7  0008               	return
+   618  00F8                     __end_of_usartInit:	
+   619                           
+   620                           	psect	text4
+   621  008C                     __ptext4:	
+   622 ;; *************** function _timer1Init *****************
+   623 ;; Defined at:
+   624 ;;		line 100 in file "main.c"
+   625 ;; Parameters:    Size  Location     Type
+   626 ;;		None
+   627 ;; Auto vars:     Size  Location     Type
+   628 ;;		None
+   629 ;; Return value:  Size  Location     Type
+   630 ;;		None               void
+   631 ;; Registers used:
+   632 ;;		wreg, status,2, status,0
+   633 ;; Tracked objects:
+   634 ;;		On entry : 0/0
+   635 ;;		On exit  : 0/0
+   636 ;;		Unchanged: 0/0
+   637 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   638 ;;      Params:         0       0       0       0
+   639 ;;      Locals:         0       0       0       0
+   640 ;;      Temps:          1       0       0       0
+   641 ;;      Totals:         1       0       0       0
+   642 ;;Total ram usage:        1 bytes
+   643 ;; Hardware stack levels used:    1
+   644 ;; Hardware stack levels required when called:    1
+   645 ;; This function calls:
+   646 ;;		Nothing
+   647 ;; This function is called by:
+   648 ;;		_main
+   649 ;; This function uses a non-reentrant model
+   650 ;;
+   651                           
+   652                           
+   653                           ;psect for function _timer1Init
+   654  008C                     _timer1Init:	
+   655                           
+   656                           ;main.c: 101: PCON |= (1 << 3);
+   657                           
+   658                           ;incstack = 0
+   659                           ; Regs used in _timer1Init: [wreg+status,2+status,0]
+   660  008C  1683               	bsf	3,5	;RP0=1, select bank1
+   661  008D  1303               	bcf	3,6	;RP1=0, select bank1
+   662  008E  158E               	bsf	14,3	;volatile
+   663                           
+   664                           ;main.c: 102: T1CON &= ~(1 << 1);
+   665  008F  30FD               	movlw	253
+   666  0090  00F5               	movwf	??_timer1Init
+   667  0091  0875               	movf	??_timer1Init,w
+   668  0092  1283               	bcf	3,5	;RP0=0, select bank0
+   669  0093  1303               	bcf	3,6	;RP1=0, select bank0
+   670  0094  0590               	andwf	16,f	;volatile
+   671                           
+   672                           ;main.c: 103: PIR1 &= ~(1 << 0);
+   673  0095  30FE               	movlw	254
+   674  0096  00F5               	movwf	??_timer1Init
+   675  0097  0875               	movf	??_timer1Init,w
+   676  0098  058C               	andwf	12,f	;volatile
+   677                           
+   678                           ;main.c: 104: PIE1 |= (1 << 0);
+   679  0099  1683               	bsf	3,5	;RP0=1, select bank1
+   680  009A  1303               	bcf	3,6	;RP1=0, select bank1
+   681  009B  140C               	bsf	12,0	;volatile
+   682                           
+   683                           ;main.c: 105: TMR1H = tmr1High;
+   684  009C  087B               	movf	_tmr1High,w
+   685  009D  1283               	bcf	3,5	;RP0=0, select bank0
+   686  009E  1303               	bcf	3,6	;RP1=0, select bank0
+   687  009F  008F               	movwf	15	;volatile
+   688                           
+   689                           ;main.c: 106: TMR1L = tmr1Low;
+   690  00A0  087C               	movf	_tmr1Low,w
+   691  00A1  008E               	movwf	14	;volatile
+   692                           
+   693                           ;main.c: 107: T1CON |= (1 << 5 | 1 << 4 | 1 << 2);
+   694  00A2  3034               	movlw	52
+   695  00A3  00F5               	movwf	??_timer1Init
+   696  00A4  0875               	movf	??_timer1Init,w
+   697  00A5  0490               	iorwf	16,f	;volatile
+   698                           
+   699                           ;main.c: 108: INTCON |= (1 << 7);
+   700  00A6  178B               	bsf	11,7	;volatile
+   701                           
+   702                           ;main.c: 109: INTCON |= (1 << 6);
+   703  00A7  170B               	bsf	11,6	;volatile
+   704  00A8  0008               	return
+   705  00A9                     __end_of_timer1Init:	
+   706                           
+   707                           	psect	text5
+   708  00A9                     __ptext5:	
+   709 ;; *************** function _setTimeOut *****************
+   710 ;; Defined at:
+   711 ;;		line 113 in file "main.c"
+   712 ;; Parameters:    Size  Location     Type
+   713 ;;  interval        2    5[COMMON] unsigned int 
+   714 ;; Auto vars:     Size  Location     Type
+   715 ;;		None
+   716 ;; Return value:  Size  Location     Type
+   717 ;;		None               void
+   718 ;; Registers used:
+   719 ;;		wreg, status,2, status,0
+   720 ;; Tracked objects:
+   721 ;;		On entry : 0/0
+   722 ;;		On exit  : 0/0
+   723 ;;		Unchanged: 0/0
+   724 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   725 ;;      Params:         2       0       0       0
+   726 ;;      Locals:         0       0       0       0
+   727 ;;      Temps:          1       0       0       0
+   728 ;;      Totals:         3       0       0       0
+   729 ;;Total ram usage:        3 bytes
+   730 ;; Hardware stack levels used:    1
+   731 ;; Hardware stack levels required when called:    1
+   732 ;; This function calls:
+   733 ;;		Nothing
+   734 ;; This function is called by:
+   735 ;;		_main
+   736 ;; This function uses a non-reentrant model
+   737 ;;
+   738                           
+   739                           
+   740                           ;psect for function _setTimeOut
+   741  00A9                     _setTimeOut:	
+   742                           
+   743                           ;main.c: 114: T1CON |= (1 << 0);
+   744                           
+   745                           ;incstack = 0
+   746                           ; Regs used in _setTimeOut: [wreg+status,2+status,0]
+   747  00A9  1283               	bcf	3,5	;RP0=0, select bank0
+   748  00AA  1303               	bcf	3,6	;RP1=0, select bank0
+   749  00AB  1410               	bsf	16,0	;volatile
+   750                           
+   751                           ;main.c: 115: TMR1H = tmr1High;
+   752  00AC  087B               	movf	_tmr1High,w
+   753  00AD  008F               	movwf	15	;volatile
+   754                           
+   755                           ;main.c: 116: TMR1L = tmr1Low;
+   756  00AE  087C               	movf	_tmr1Low,w
+   757  00AF  008E               	movwf	14	;volatile
+   758                           
+   759                           ;main.c: 117: timerCounter = 0;
+   760  00B0  01F9               	clrf	_timerCounter
+   761  00B1  01FA               	clrf	_timerCounter+1
+   762                           
+   763                           ;main.c: 118: T1CON |= (1 << 0);
+   764  00B2  1410               	bsf	16,0	;volatile
+   765  00B3                     l611:	
+   766                           ;main.c: 119: while (timerCounter < interval);
+   767                           
+   768  00B3  0876               	movf	setTimeOut@interval+1,w
+   769  00B4  027A               	subwf	_timerCounter+1,w
+   770  00B5  1D03               	skipz
+   771  00B6  28B9               	goto	u25
+   772  00B7  0875               	movf	setTimeOut@interval,w
+   773  00B8  0279               	subwf	_timerCounter,w
+   774  00B9                     u25:	
+   775  00B9  1C03               	skipc
+   776  00BA  28B3               	goto	l611
+   777                           
+   778                           ;main.c: 120: T1CON &= ~(1 << 0);
+   779  00BB  30FE               	movlw	254
+   780  00BC  00F7               	movwf	??_setTimeOut
+   781  00BD  0877               	movf	??_setTimeOut,w
+   782  00BE  1283               	bcf	3,5	;RP0=0, select bank0
+   783  00BF  1303               	bcf	3,6	;RP1=0, select bank0
+   784  00C0  0590               	andwf	16,f	;volatile
+   785                           
+   786                           ;main.c: 121: PIR1 &= ~(1 << 0);
+   787  00C1  30FE               	movlw	254
+   788  00C2  00F7               	movwf	??_setTimeOut
+   789  00C3  0877               	movf	??_setTimeOut,w
+   790  00C4  058C               	andwf	12,f	;volatile
+   791  00C5  0008               	return
+   792  00C6                     __end_of_setTimeOut:	
+   793                           
+   794                           	psect	text6
+   795  0116                     __ptext6:	
+   796 ;; *************** function _pullUpConfig *****************
+   797 ;; Defined at:
+   798 ;;		line 150 in file "main.c"
+   799 ;; Parameters:    Size  Location     Type
+   800 ;;		None
+   801 ;; Auto vars:     Size  Location     Type
+   802 ;;		None
+   803 ;; Return value:  Size  Location     Type
+   804 ;;		None               void
+   805 ;; Registers used:
+   806 ;;		wreg, status,2, status,0
+   807 ;; Tracked objects:
+   808 ;;		On entry : 0/0
+   809 ;;		On exit  : 0/0
+   810 ;;		Unchanged: 0/0
+   811 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   812 ;;      Params:         0       0       0       0
+   813 ;;      Locals:         0       0       0       0
+   814 ;;      Temps:          1       0       0       0
+   815 ;;      Totals:         1       0       0       0
+   816 ;;Total ram usage:        1 bytes
+   817 ;; Hardware stack levels used:    1
+   818 ;; Hardware stack levels required when called:    1
+   819 ;; This function calls:
+   820 ;;		Nothing
+   821 ;; This function is called by:
+   822 ;;		_main
+   823 ;; This function uses a non-reentrant model
+   824 ;;
+   825                           
+   826                           
+   827                           ;psect for function _pullUpConfig
+   828  0116                     _pullUpConfig:	
+   829                           
+   830                           ;main.c: 151: OPTION_REG &= ~(1 << 7);
+   831                           
+   832                           ;incstack = 0
+   833                           ; Regs used in _pullUpConfig: [wreg+status,2+status,0]
+   834  0116  307F               	movlw	127
+   835  0117  00F5               	movwf	??_pullUpConfig
+   836  0118  0875               	movf	??_pullUpConfig,w
+   837  0119  1683               	bsf	3,5	;RP0=1, select bank1
+   838  011A  1303               	bcf	3,6	;RP1=0, select bank1
+   839  011B  0581               	andwf	1,f	;volatile
+   840                           
+   841                           ;main.c: 152: TRISB |= (1 << 3);
+   842  011C  1586               	bsf	6,3	;volatile
+   843                           
+   844                           ;main.c: 153: PORTB |= (1 << 3);
+   845  011D  1283               	bcf	3,5	;RP0=0, select bank0
+   846  011E  1303               	bcf	3,6	;RP1=0, select bank0
+   847  011F  1586               	bsf	6,3	;volatile
+   848  0120  0008               	return
+   849  0121                     __end_of_pullUpConfig:	
+   850                           
+   851                           	psect	text7
+   852  0129                     __ptext7:	
+   853 ;; *************** function _ledsStandBy *****************
+   854 ;; Defined at:
+   855 ;;		line 144 in file "main.c"
+   856 ;; Parameters:    Size  Location     Type
+   857 ;;		None
+   858 ;; Auto vars:     Size  Location     Type
+   859 ;;		None
+   860 ;; Return value:  Size  Location     Type
+   861 ;;		None               void
+   862 ;; Registers used:
+   863 ;;		wreg, status,2, status,0
+   864 ;; Tracked objects:
+   865 ;;		On entry : 0/0
+   866 ;;		On exit  : 0/0
+   867 ;;		Unchanged: 0/0
+   868 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   869 ;;      Params:         0       0       0       0
+   870 ;;      Locals:         0       0       0       0
+   871 ;;      Temps:          1       0       0       0
+   872 ;;      Totals:         1       0       0       0
+   873 ;;Total ram usage:        1 bytes
+   874 ;; Hardware stack levels used:    1
+   875 ;; Hardware stack levels required when called:    1
+   876 ;; This function calls:
+   877 ;;		Nothing
+   878 ;; This function is called by:
+   879 ;;		_main
+   880 ;; This function uses a non-reentrant model
+   881 ;;
+   882                           
+   883                           
+   884                           ;psect for function _ledsStandBy
+   885  0129                     _ledsStandBy:	
+   886                           
+   887                           ;main.c: 145: PORTA &= ~((1 << 7) | (1 << 1));
+   888                           
+   889                           ;incstack = 0
+   890                           ; Regs used in _ledsStandBy: [wreg+status,2+status,0]
+   891  0129  307D               	movlw	125
+   892  012A  00F5               	movwf	??_ledsStandBy
+   893  012B  0875               	movf	??_ledsStandBy,w
+   894  012C  1283               	bcf	3,5	;RP0=0, select bank0
+   895  012D  1303               	bcf	3,6	;RP1=0, select bank0
+   896  012E  0585               	andwf	5,f	;volatile
+   897                           
+   898                           ;main.c: 146: PORTA |= (1 << 0);
+   899  012F  1405               	bsf	5,0	;volatile
+   900  0130  0008               	return
+   901  0131                     __end_of_ledsStandBy:	
+   902                           
+   903                           	psect	text8
+   904  0131                     __ptext8:	
+   905 ;; *************** function _ledsEnviando *****************
+   906 ;; Defined at:
+   907 ;;		line 132 in file "main.c"
+   908 ;; Parameters:    Size  Location     Type
+   909 ;;		None
+   910 ;; Auto vars:     Size  Location     Type
+   911 ;;		None
+   912 ;; Return value:  Size  Location     Type
+   913 ;;		None               void
+   914 ;; Registers used:
+   915 ;;		wreg, status,2, status,0
+   916 ;; Tracked objects:
+   917 ;;		On entry : 0/0
+   918 ;;		On exit  : 0/0
+   919 ;;		Unchanged: 0/0
+   920 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   921 ;;      Params:         0       0       0       0
+   922 ;;      Locals:         0       0       0       0
+   923 ;;      Temps:          1       0       0       0
+   924 ;;      Totals:         1       0       0       0
+   925 ;;Total ram usage:        1 bytes
+   926 ;; Hardware stack levels used:    1
+   927 ;; Hardware stack levels required when called:    1
+   928 ;; This function calls:
+   929 ;;		Nothing
+   930 ;; This function is called by:
+   931 ;;		_main
+   932 ;; This function uses a non-reentrant model
+   933 ;;
+   934                           
+   935                           
+   936                           ;psect for function _ledsEnviando
+   937  0131                     _ledsEnviando:	
+   938                           
+   939                           ;main.c: 133: PORTA &= ~((1 << 7) | (1 << 0));
+   940                           
+   941                           ;incstack = 0
+   942                           ; Regs used in _ledsEnviando: [wreg+status,2+status,0]
+   943  0131  307E               	movlw	126
+   944  0132  00F5               	movwf	??_ledsEnviando
+   945  0133  0875               	movf	??_ledsEnviando,w
+   946  0134  1283               	bcf	3,5	;RP0=0, select bank0
+   947  0135  1303               	bcf	3,6	;RP1=0, select bank0
+   948  0136  0585               	andwf	5,f	;volatile
+   949                           
+   950                           ;main.c: 134: PORTA |= (1 << 1);
+   951  0137  1485               	bsf	5,1	;volatile
+   952  0138  0008               	return
+   953  0139                     __end_of_ledsEnviando:	
+   954                           
+   955                           	psect	text9
+   956  0139                     __ptext9:	
+   957 ;; *************** function _ledsEnviado *****************
+   958 ;; Defined at:
+   959 ;;		line 138 in file "main.c"
+   960 ;; Parameters:    Size  Location     Type
+   961 ;;		None
+   962 ;; Auto vars:     Size  Location     Type
+   963 ;;		None
+   964 ;; Return value:  Size  Location     Type
+   965 ;;		None               void
+   966 ;; Registers used:
+   967 ;;		wreg, status,2, status,0
+   968 ;; Tracked objects:
+   969 ;;		On entry : 0/0
+   970 ;;		On exit  : 0/0
+   971 ;;		Unchanged: 0/0
+   972 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+   973 ;;      Params:         0       0       0       0
+   974 ;;      Locals:         0       0       0       0
+   975 ;;      Temps:          1       0       0       0
+   976 ;;      Totals:         1       0       0       0
+   977 ;;Total ram usage:        1 bytes
+   978 ;; Hardware stack levels used:    1
+   979 ;; Hardware stack levels required when called:    1
+   980 ;; This function calls:
+   981 ;;		Nothing
+   982 ;; This function is called by:
+   983 ;;		_main
+   984 ;; This function uses a non-reentrant model
+   985 ;;
+   986                           
+   987                           
+   988                           ;psect for function _ledsEnviado
+   989  0139                     _ledsEnviado:	
+   990                           
+   991                           ;main.c: 139: PORTA &= ~((1 << 1) | (1 << 0));
+   992                           
+   993                           ;incstack = 0
+   994                           ; Regs used in _ledsEnviado: [wreg+status,2+status,0]
+   995  0139  30FC               	movlw	252
+   996  013A  00F5               	movwf	??_ledsEnviado
+   997  013B  0875               	movf	??_ledsEnviado,w
+   998  013C  1283               	bcf	3,5	;RP0=0, select bank0
+   999  013D  1303               	bcf	3,6	;RP1=0, select bank0
+  1000  013E  0585               	andwf	5,f	;volatile
+  1001                           
+  1002                           ;main.c: 140: PORTA |= (1 << 7);
+  1003  013F  1785               	bsf	5,7	;volatile
+  1004  0140  0008               	return
+  1005  0141                     __end_of_ledsEnviado:	
+  1006                           
+  1007                           	psect	text10
+  1008  0108                     __ptext10:	
+  1009 ;; *************** function _ledsConfig *****************
+  1010 ;; Defined at:
+  1011 ;;		line 125 in file "main.c"
+  1012 ;; Parameters:    Size  Location     Type
+  1013 ;;		None
+  1014 ;; Auto vars:     Size  Location     Type
+  1015 ;;		None
+  1016 ;; Return value:  Size  Location     Type
+  1017 ;;		None               void
+  1018 ;; Registers used:
+  1019 ;;		wreg, status,2, status,0
+  1020 ;; Tracked objects:
+  1021 ;;		On entry : 0/0
+  1022 ;;		On exit  : 0/0
+  1023 ;;		Unchanged: 0/0
+  1024 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1025 ;;      Params:         0       0       0       0
+  1026 ;;      Locals:         0       0       0       0
+  1027 ;;      Temps:          1       0       0       0
+  1028 ;;      Totals:         1       0       0       0
+  1029 ;;Total ram usage:        1 bytes
+  1030 ;; Hardware stack levels used:    1
+  1031 ;; Hardware stack levels required when called:    1
+  1032 ;; This function calls:
+  1033 ;;		Nothing
+  1034 ;; This function is called by:
+  1035 ;;		_main
+  1036 ;; This function uses a non-reentrant model
+  1037 ;;
+  1038                           
+  1039                           
+  1040                           ;psect for function _ledsConfig
+  1041  0108                     _ledsConfig:	
+  1042                           
+  1043                           ;main.c: 126: TRISA &= ~((1 << 7) | (1 << 0) | (1 << 1));
+  1044                           
+  1045                           ;incstack = 0
+  1046                           ; Regs used in _ledsConfig: [wreg+status,2+status,0]
+  1047  0108  307C               	movlw	124
+  1048  0109  00F5               	movwf	??_ledsConfig
+  1049  010A  0875               	movf	??_ledsConfig,w
+  1050  010B  1683               	bsf	3,5	;RP0=1, select bank1
+  1051  010C  1303               	bcf	3,6	;RP1=0, select bank1
+  1052  010D  0585               	andwf	5,f	;volatile
+  1053                           
+  1054                           ;main.c: 127: PORTA &= ~((1 << 7) | (1 << 1));
+  1055  010E  307D               	movlw	125
+  1056  010F  00F5               	movwf	??_ledsConfig
+  1057  0110  0875               	movf	??_ledsConfig,w
+  1058  0111  1283               	bcf	3,5	;RP0=0, select bank0
+  1059  0112  1303               	bcf	3,6	;RP1=0, select bank0
+  1060  0113  0585               	andwf	5,f	;volatile
+  1061                           
+  1062                           ;main.c: 128: PORTA |= (1 << 0);
+  1063  0114  1405               	bsf	5,0	;volatile
+  1064  0115  0008               	return
+  1065  0116                     __end_of_ledsConfig:	
+  1066                           
+  1067                           	psect	text11
+  1068  00C6                     __ptext11:	
+  1069 ;; *************** function _ISR *****************
+  1070 ;; Defined at:
+  1071 ;;		line 157 in file "main.c"
+  1072 ;; Parameters:    Size  Location     Type
+  1073 ;;		None
+  1074 ;; Auto vars:     Size  Location     Type
+  1075 ;;		None
+  1076 ;; Return value:  Size  Location     Type
+  1077 ;;		None               void
+  1078 ;; Registers used:
+  1079 ;;		wreg, status,2, status,0
+  1080 ;; Tracked objects:
+  1081 ;;		On entry : 0/0
+  1082 ;;		On exit  : 0/0
+  1083 ;;		Unchanged: 0/0
+  1084 ;; Data sizes:     COMMON   BANK0   BANK1   BANK2
+  1085 ;;      Params:         0       0       0       0
+  1086 ;;      Locals:         0       0       0       0
+  1087 ;;      Temps:          5       0       0       0
+  1088 ;;      Totals:         5       0       0       0
+  1089 ;;Total ram usage:        5 bytes
+  1090 ;; Hardware stack levels used:    1
+  1091 ;; This function calls:
+  1092 ;;		Nothing
+  1093 ;; This function is called by:
+  1094 ;;		Interrupt level 1
+  1095 ;; This function uses a non-reentrant model
+  1096 ;;
+  1097                           
+  1098                           
+  1099                           ;psect for function _ISR
+  1100  00C6                     _ISR:	
+  1101                           
+  1102                           ;main.c: 158: if (PIR1 & (1 << 0)) {
+  1103  00C6  1C0C               	btfss	12,0	;volatile
+  1104  00C7  28D6               	goto	i1l108
+  1105                           
+  1106                           ;main.c: 159: PIR1 &= ~(1 << 0);
+  1107  00C8  30FE               	movlw	254
+  1108  00C9  00F0               	movwf	??_ISR
+  1109  00CA  0870               	movf	??_ISR,w
+  1110  00CB  058C               	andwf	12,f	;volatile
+  1111                           
+  1112                           ;main.c: 160: TMR1H = tmr1High;
+  1113  00CC  087B               	movf	_tmr1High,w
+  1114  00CD  008F               	movwf	15	;volatile
+  1115                           
+  1116                           ;main.c: 161: TMR1L = tmr1Low;
+  1117  00CE  087C               	movf	_tmr1Low,w
+  1118  00CF  008E               	movwf	14	;volatile
+  1119                           
+  1120                           ;main.c: 162: timerCounter++;
+  1121  00D0  3001               	movlw	1
+  1122  00D1  07F9               	addwf	_timerCounter,f
+  1123  00D2  1803               	skipnc
+  1124  00D3  0AFA               	incf	_timerCounter+1,f
+  1125  00D4  3000               	movlw	0
+  1126  00D5  07FA               	addwf	_timerCounter+1,f
+  1127  00D6                     i1l108:	
+  1128  00D6  0874               	movf	??_ISR+4,w
+  1129  00D7  00FF               	movwf	127
+  1130  00D8  0873               	movf	??_ISR+3,w
+  1131  00D9  008A               	movwf	10
+  1132  00DA  0872               	movf	??_ISR+2,w
+  1133  00DB  0084               	movwf	4
+  1134  00DC  0E71               	swapf	(??_ISR+1)^(0+-128),w
+  1135  00DD  0083               	movwf	3
+  1136  00DE  0EFE               	swapf	126,f
+  1137  00DF  0E7E               	swapf	126,w
+  1138  00E0  0009               	retfie
+  1139  00E1                     __end_of_ISR:	
+  1140  007E                     btemp	set	126	;btemp
+  1141  007E                     wtemp	set	126
+  1142  007E                     wtemp0	set	126
+  1143  0080                     wtemp1	set	128
+  1144  0082                     wtemp2	set	130
+  1145  0084                     wtemp3	set	132
+  1146  0086                     wtemp4	set	134
+  1147  0088                     wtemp5	set	136
+  1148  007F                     wtemp6	set	127
+  1149  007E                     ttemp	set	126
+  1150  007E                     ttemp0	set	126
+  1151  0081                     ttemp1	set	129
+  1152  0084                     ttemp2	set	132
+  1153  0087                     ttemp3	set	135
+  1154  007F                     ttemp4	set	127
+  1155  007E                     ltemp	set	126
+  1156  007E                     ltemp0	set	126
+  1157  0082                     ltemp1	set	130
+  1158  0086                     ltemp2	set	134
+  1159  0080                     ltemp3	set	128
+  1160                           
+  1161                           	psect	intentry
+  1162  0004                     __pintentry:	
+  1163                           ;incstack = 0
+  1164                           ; Regs used in _ISR: [wreg+status,2+status,0]
+  1165                           
+  1166  0004                     interrupt_function:	
+  1167  007E                     saved_w	set	btemp
+  1168  0004  00FE               	movwf	btemp
+  1169  0005  0E03               	swapf	3,w
+  1170  0006  00F1               	movwf	??_ISR+1
+  1171  0007  0804               	movf	4,w
+  1172  0008  00F2               	movwf	??_ISR+2
+  1173  0009  080A               	movf	10,w
+  1174  000A  00F3               	movwf	??_ISR+3
+  1175  000B  1283               	bcf	3,5	;RP0=0, select bank0
+  1176  000C  1303               	bcf	3,6	;RP1=0, select bank0
+  1177  000D  087F               	movf	btemp+1,w
+  1178  000E  00F4               	movwf	??_ISR+4
+  1179  000F  28C6               	ljmp	_ISR
+
+
+Data Sizes:
+    Strings     69
+    Constant    0
+    Data        2
+    BSS         2
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14      9      13
+    BANK0            80      0       0
+    BANK1            80      0       0
+    BANK2            48      0       0
+
+Pointer List with Targets:
+
+    usartPutStringConst@dataPtr	PTR const unsigned char  size(1) Largest target is 69
+		 -> STR_1(CODE[69]), 
+
+
+Critical Paths under _main in COMMON
+
+    _main->_setTimeOut
+    _main->_usartPutStringConst
+    _usartPutStringConst->_usartSend
+
+Critical Paths under _ISR in COMMON
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _ISR in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _ISR in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _ISR in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 1     1      0     256
+                                              8 COMMON     1     1      0
+                         _ledsConfig
+                        _ledsEnviado
+                       _ledsEnviando
+                        _ledsStandBy
+                       _pullUpConfig
+                         _setTimeOut
+                         _timer1Init
+                          _usartInit
+                _usartPutStringConst
+ ---------------------------------------------------------------------------------
+ (1) _usartPutStringConst                                  2     2      0      69
+                                              6 COMMON     2     2      0
+                          _usartSend
+ ---------------------------------------------------------------------------------
+ (2) _usartSend                                            1     1      0      15
+                                              5 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _usartInit                                            1     1      0       0
+                                              5 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _timer1Init                                           1     1      0       0
+                                              5 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _setTimeOut                                           3     1      2     187
+                                              5 COMMON     3     1      2
+ ---------------------------------------------------------------------------------
+ (1) _pullUpConfig                                         1     1      0       0
+                                              5 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _ledsStandBy                                          1     1      0       0
+                                              5 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _ledsEnviando                                         1     1      0       0
+                                              5 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _ledsEnviado                                          1     1      0       0
+                                              5 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ (1) _ledsConfig                                           1     1      0       0
+                                              5 COMMON     1     1      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 2
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (3) _ISR                                                  5     5      0       0
+                                              0 COMMON     5     5      0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _ledsConfig
+   _ledsEnviado
+   _ledsEnviando
+   _ledsStandBy
+   _pullUpConfig
+   _setTimeOut
+   _timer1Init
+   _usartInit
+   _usartPutStringConst
+     _usartSend
+
+ _ISR (ROOT)
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+SFR3                 0      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+BANK2               30      0       0       9        0.0%
+BITBANK2            30      0       0       8        0.0%
+SFR2                 0      0       0       5        0.0%
+BITSFR2              0      0       0       5        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK1            50      0       0       6        0.0%
+SFR1                 0      0       0       2        0.0%
+BITSFR1              0      0       0       2        0.0%
+BANK0               50      0       0       3        0.0%
+BITBANK0            50      0       0       5        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR0              0      0       0       1        0.0%
+COMMON               E      9       D       1       92.9%
+BITCOMMON            E      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+DATA                 0      0       D      10        0.0%
+ABS                  0      0       D       4        0.0%
+NULL                 0      0       0       0        0.0%
+STACK                0      0       0       2        0.0%
+EEDATA              80      0       0       0        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.33 build 59893 
+Symbol Table                                                                                   Wed Jan 07 12:09:50 2015
+
+                           pc 0002                   __CFG_CP$OFF 0000                            l71 0122  
+                          u25 00B9                            fsr 0004                  ?_ledsEnviado 0070  
+                         l611 00B3                           l625 00F9                           l645 006E  
+                         l659 0086                  __CFG_CPD$OFF 0000                           _ISR 00C6  
+                         fsr0 0004                  ?_ledsStandBy 0070                  __CFG_LVP$OFF 0000  
+                        ?_ISR 0070                 ?_ledsEnviando 0070                          STR_1 001F  
+                        _PIE1 008C                          _PCON 008E                          _PIR1 000C  
+                        _main 0064                          btemp 007E                 __CFG_BOREN$ON 0000  
+                        ltemp 007E                          start 0010                          ttemp 007E  
+                        wtemp 007E                 __CFG_MCLRE$ON 0000                         ??_ISR 0070  
+                       ?_main 0070                 __CFG_WDTE$OFF 0000                         _CMCON 001F  
+                       _T1CON 0010                         i1l108 00D6                         _RCSTA 0018  
+                       _TMR1H 000F                         _TMR1L 000E                         _SPBRG 0099  
+                       _PORTA 0005                         _PORTB 0006                         _TRISA 0085  
+                       _TRISB 0086                         _TXREG 0019                         _TXSTA 0098  
+               __CFG_PWRTE$ON 0000                ??_ledsEnviando 0075                         pclath 000A  
+                       ltemp0 007E                         ltemp1 0082                         ltemp2 0086  
+                       ltemp3 0080                         ttemp0 007E                         ttemp1 0081  
+                       ttemp2 0084                         ttemp3 0087                         ttemp4 007F  
+                       status 0003                         wtemp0 007E                         wtemp1 0080  
+                       wtemp2 0082                         wtemp3 0084                         wtemp4 0086  
+                       wtemp5 0088                         wtemp6 007F               __initialization 0011  
+                __end_of_main 008C                        ??_main 0078                        _INTCON 000B  
+ __end_of_usartPutStringConst 0108                  __pdataCOMMON 007B          __size_of_ledsEnviado 0008  
+                      saved_w 007E          __size_of_ledsStandBy 0008       __end_of__initialization 0017  
+              __pcstackCOMMON 0070          __end_of_ledsEnviando 0139                    __pmaintext 0064  
+                  __pintentry 0004                    _ledsConfig 0108                    __stringtab 0019  
+          __size_of_usartInit 0017            __size_of_usartSend 0008                       __ptext1 00F8  
+                     __ptext2 0121                       __ptext3 00E1                       __ptext4 008C  
+                     __ptext5 00A9                       __ptext6 0116                       __ptext7 0129  
+                     __ptext8 0131                       __ptext9 0139                  __size_of_ISR 001B  
+                     _tmr1Low 007C          end_of_initialization 0017                    _setTimeOut 00A9  
+       __size_of_ledsEnviando 0008                    _timer1Init 008C             __end_of_usartInit 00F8  
+           __end_of_usartSend 0129                 ?_pullUpConfig 0070                   ?_ledsConfig 0070  
+                _ledsEnviando 0131    usartPutStringConst@dataPtr 0077                 __pidataCOMMON 0141  
+               ??_ledsEnviado 0075  __size_of_usartPutStringConst 0010                ??_pullUpConfig 0075  
+         start_initialization 0011                 ??_ledsStandBy 0075                   __end_of_ISR 00E1  
+                 ?_setTimeOut 0075                   ?_timer1Init 0070                 usartSend@data 0075  
+         __size_of_ledsConfig 000E                   __pbssCOMMON 0079                     ___latbits 0000  
+         __end_of__stringdata 0064           __end_of_ledsEnviado 0141           __end_of_ledsStandBy 0131  
+                   __pstrings 0019           __size_of_setTimeOut 001D           __size_of_timer1Init 001D  
+           interrupt_function 0004          __end_of_pullUpConfig 0121                   __stringbase 001E  
+                 __stringdata 001F                   _ledsEnviado 0139                     _usartInit 00E1  
+                   _usartSend 0121            setTimeOut@interval 0075                   _ledsStandBy 0129  
+                ??_ledsConfig 0075           _usartPutStringConst 00F8            __end_of_ledsConfig 0116  
+          __end_of__stringtab 001F          ?_usartPutStringConst 0070                    ?_usartInit 0070  
+                  ?_usartSend 0070                      __ptext10 0108                      __ptext11 00C6  
+                ??_setTimeOut 0077                 __size_of_main 0028                      _tmr1High 007B  
+                ??_timer1Init 0075         ??_usartPutStringConst 0076            __end_of_setTimeOut 00C6  
+          __end_of_timer1Init 00A9                      intlevel1 0000         __size_of_pullUpConfig 000B  
+                _timerCounter 0079                     stringcode 0019                    _OPTION_REG 0081  
+                 ??_usartInit 0075                   ??_usartSend 0075                      stringdir 0019  
+                    stringtab 0019                  _pullUpConfig 0116            __CFG_FOSC$INTOSCIO 0000  

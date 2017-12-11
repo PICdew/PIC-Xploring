@@ -1,0 +1,7 @@
+_main: CODE, 1959 0 87
+_eepromWrite: CODE, 1935 0 24
+__initialization: CODE, 2046 0 0
+_usartInit: CODE, 1904 0 15
+_usartSend: CODE, 1896 0 8
+_eepromRead: CODE, 1919 0 16
+Total: 150

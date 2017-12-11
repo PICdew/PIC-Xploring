@@ -1,0 +1,8 @@
+__stringdata: STRCODE, 2048 0 9
+_main: CODE, 2005 0 30
+__initialization: CODE, 2035 0 9
+_eusartSend: CODE, 1952 0 8
+_oscillatorConfig: CODE, 1972 0 12
+_eusartSendString: CODE, 1984 0 21
+_eusartInit: CODE, 1960 0 12
+Total: 101

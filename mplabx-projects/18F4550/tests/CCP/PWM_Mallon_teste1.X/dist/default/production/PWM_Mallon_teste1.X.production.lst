@@ -1,0 +1,409 @@
+
+
+Microchip Technology PIC18 LITE Macro Assembler V1.32 build 58300 
+                                                                                               Thu Jul 31 23:20:44 2014
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 58300
+     1                           	processor	18F4550
+     2                           	fnconf	rparam,??,?,0
+     3                           	opt	pw 120
+     4                           	opt	lm
+     5                           	psect	text0,global,reloc=2,class=CODE,delta=1
+     6                           	psect	cinit,global,reloc=2,class=CODE,delta=1
+     7                           	psect	cstackCOMRAM,global,class=COMRAM,space=1,delta=1
+     8                           	psect	text1,global,reloc=2,class=CODE,delta=1
+     9                           	psect	text2,global,reloc=2,class=CODE,delta=1
+    10                           	psect	intsave_regs,global,class=BIGRAM,space=1,delta=1
+    11                           	psect	rparam,global,class=COMRAM,space=1,delta=1
+    12  0000                     _ADCON1	set	4033
+    13  0000                     _CCP1CON	set	4029
+    14  0000                     _CCP1CONbits	set	4029
+    15  0000                     _CCPR1L	set	4030
+    16  0000                     _PORTA	set	3968
+    17  0000                     _PORTB	set	3969
+    18  0000                     _PORTC	set	3970
+    19  0000                     _PORTD	set	3971
+    20  0000                     _PORTE	set	3972
+    21  0000                     _PR2	set	4043
+    22  0000                     _T2CON	set	4042
+    23  0000                     _TMR2	set	4044
+    24  0000                     _TRISA	set	3986
+    25  0000                     _TRISB	set	3987
+    26  0000                     _TRISC	set	3988
+    27  0000                     _TRISCbits	set	3988
+    28  0000                     _TRISD	set	3989
+    29  0000                     _TRISE	set	3990
+    30                           
+    31                           ; 0 bytes @ 0x0
+    32 ;;
+    33 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+    34 ;;
+    35 ;; *************** function _main *****************
+    36 ;; Defined at:
+    37 ;;		line 53 in file "main.c"
+    38 ;; Parameters:    Size  Location     Type
+    39 ;;		None
+    40 ;; Auto vars:     Size  Location     Type
+    41 ;;		None
+    42 ;; Return value:  Size  Location     Type
+    43 ;;		None               void
+    44 ;; Registers used:
+    45 ;;		wreg, status,2, status,0, prodl, prodh, cstack
+    46 ;; Tracked objects:
+    47 ;;		On entry : 0/0
+    48 ;;		On exit  : 0/0
+    49 ;;		Unchanged: 0/0
+    50 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+    51 ;;      Params:         0       0       0       0       0       0       0       0       0
+    52 ;;      Locals:         0       0       0       0       0       0       0       0       0
+    53 ;;      Temps:          0       0       0       0       0       0       0       0       0
+    54 ;;      Totals:         0       0       0       0       0       0       0       0       0
+    55 ;;Total ram usage:        0 bytes
+    56 ;; Hardware stack levels required when called:    1
+    57 ;; This function calls:
+    58 ;;		_configs
+    59 ;;		_configsPWM
+    60 ;; This function is called by:
+    61 ;;		Startup code after reset
+    62 ;; This function uses a non-reentrant model
+    63 ;;
+    64                           
+    65                           	psect	text0
+    66  007FA4                     __ptext0:
+    67                           	opt stack 0
+    68  007FA4                     _main:
+    69                           	opt stack 30
+    70                           
+    71                           ;main.c: 54: configs();
+    72                           
+    73                           ;incstack = 0
+    74  007FA4  ECE9  F03F         	call	_configs	;wreg free
+    75                           
+    76                           ;main.c: 55: configsPWM();
+    77  007FA8  ECD7  F03F         	call	_configsPWM	;wreg free
+    78  007FAC                     l45:
+    79  007FAC  D7FF               	goto	l45
+    80  007FAE                     __end_of_main:
+    81                           	opt stack 0
+    82                           
+    83                           	psect	cinit
+    84  007F9E                     __pcinit:
+    85                           	opt stack 0
+    86  007F9E                     start_initialization:
+    87                           	opt stack 0
+    88  007F9E                     __initialization:
+    89                           	opt stack 0
+    90  007F9E                     end_of_initialization:
+    91                           	opt stack 0
+    92  007F9E                     __end_of__initialization:
+    93                           	opt stack 0
+    94  007F9E  0100               	movlb	0
+    95  007FA0  EFD2  F03F         	goto	_main	;jump to C main() function
+    96                           
+    97                           	psect	cstackCOMRAM
+    98  000000                     __pcstackCOMRAM:
+    99                           	opt stack 0
+   100  000000                     
+   101 ;; *************** function _configsPWM *****************
+   102 ;; Defined at:
+   103 ;;		line 38 in file "main.c"
+   104 ;; Parameters:    Size  Location     Type
+   105 ;;		None
+   106 ;; Auto vars:     Size  Location     Type
+   107 ;;		None
+   108 ;; Return value:  Size  Location     Type
+   109 ;;		None               void
+   110 ;; Registers used:
+   111 ;;		wreg, status,2, status,0, prodl, prodh
+   112 ;; Tracked objects:
+   113 ;;		On entry : 0/0
+   114 ;;		On exit  : 0/0
+   115 ;;		Unchanged: 0/0
+   116 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   117 ;;      Params:         0       0       0       0       0       0       0       0       0
+   118 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   119 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   120 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   121 ;;Total ram usage:        0 bytes
+   122 ;; Hardware stack levels used:    1
+   123 ;; This function calls:
+   124 ;;		Nothing
+   125 ;; This function is called by:
+   126 ;;		_main
+   127 ;; This function uses a non-reentrant model
+   128 ;;
+   129                           
+   130                           	psect	text1
+   131  007FAE                     __ptext1:
+   132                           	opt stack 0
+   133  007FAE                     _configsPWM:
+   134                           	opt stack 30
+   135                           
+   136                           ;main.c: 39: PR2 = 150;
+   137                           
+   138                           ;incstack = 0
+   139  007FAE  0E96               	movlw	150
+   140  007FB0  6ECB               	movwf	4043,c	;volatile
+   141                           
+   142                           ;main.c: 40: CCPR1L = 0b01000000;
+   143  007FB2  0E40               	movlw	64
+   144  007FB4  6EBE               	movwf	4030,c	;volatile
+   145                           
+   146                           ;main.c: 41: CCP1CONbits.DC1B1 = 0;
+   147  007FB6  9ABD               	bcf	4029,5,c	;volatile
+   148                           
+   149                           ;main.c: 42: CCP1CONbits.DC1B0 = 0;
+   150  007FB8  98BD               	bcf	4029,4,c	;volatile
+   151                           
+   152                           ;main.c: 43: TRISCbits.RC2 = 0;
+   153  007FBA  9494               	bcf	3988,2,c	;volatile
+   154                           
+   155                           ;main.c: 45: T2CON = 0b00000111;
+   156  007FBC  0E07               	movlw	7
+   157  007FBE  6ECA               	movwf	4042,c	;volatile
+   158                           
+   159                           ;main.c: 47: TMR2 = 0;
+   160  007FC0  0E00               	movlw	0
+   161  007FC2  6ECC               	movwf	4044,c	;volatile
+   162                           
+   163                           ;main.c: 49: CCP1CON *= 0b00110000;
+   164  007FC4  0E30               	movlw	48
+   165  007FC6  02BD               	mulwf	4029,c	;volatile
+   166  007FC8  50F3               	movf	prodl,w,c
+   167  007FCA  6EBD               	movwf	4029,c	;volatile
+   168                           
+   169                           ;main.c: 50: CCP1CON += 0b00001100;
+   170  007FCC  0E0C               	movlw	12
+   171  007FCE  26BD               	addwf	4029,f,c	;volatile
+   172  007FD0  0012               	return	
+   173  007FD2                     __end_of_configsPWM:
+   174                           	opt stack 0
+   175                           prodl	equ	0xFF3
+   176                           
+   177 ;; *************** function _configs *****************
+   178 ;; Defined at:
+   179 ;;		line 24 in file "main.c"
+   180 ;; Parameters:    Size  Location     Type
+   181 ;;		None
+   182 ;; Auto vars:     Size  Location     Type
+   183 ;;		None
+   184 ;; Return value:  Size  Location     Type
+   185 ;;		None               void
+   186 ;; Registers used:
+   187 ;;		wreg, status,2
+   188 ;; Tracked objects:
+   189 ;;		On entry : 0/0
+   190 ;;		On exit  : 0/0
+   191 ;;		Unchanged: 0/0
+   192 ;; Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+   193 ;;      Params:         0       0       0       0       0       0       0       0       0
+   194 ;;      Locals:         0       0       0       0       0       0       0       0       0
+   195 ;;      Temps:          0       0       0       0       0       0       0       0       0
+   196 ;;      Totals:         0       0       0       0       0       0       0       0       0
+   197 ;;Total ram usage:        0 bytes
+   198 ;; Hardware stack levels used:    1
+   199 ;; This function calls:
+   200 ;;		Nothing
+   201 ;; This function is called by:
+   202 ;;		_main
+   203 ;; This function uses a non-reentrant model
+   204 ;;
+   205                           
+   206                           	psect	text2
+   207  007FD2                     __ptext2:
+   208                           	opt stack 0
+   209  007FD2                     _configs:
+   210                           	opt stack 30
+   211                           
+   212                           ;main.c: 25: TRISA = 0x00;
+   213                           
+   214                           ;incstack = 0
+   215  007FD2  0E00               	movlw	0
+   216  007FD4  6E92               	movwf	3986,c	;volatile
+   217                           
+   218                           ;main.c: 26: TRISB = 0x01;
+   219  007FD6  0E01               	movlw	1
+   220  007FD8  6E93               	movwf	3987,c	;volatile
+   221                           
+   222                           ;main.c: 27: TRISC = 0x00;
+   223  007FDA  0E00               	movlw	0
+   224  007FDC  6E94               	movwf	3988,c	;volatile
+   225                           
+   226                           ;main.c: 28: TRISD = 0x00;
+   227  007FDE  0E00               	movlw	0
+   228  007FE0  6E95               	movwf	3989,c	;volatile
+   229                           
+   230                           ;main.c: 29: TRISE = 0x00;
+   231  007FE2  0E00               	movlw	0
+   232  007FE4  6E96               	movwf	3990,c	;volatile
+   233                           
+   234                           ;main.c: 30: ADCON1 = 0x0F;
+   235  007FE6  0E0F               	movlw	15
+   236  007FE8  6EC1               	movwf	4033,c	;volatile
+   237                           
+   238                           ;main.c: 31: PORTA = 0;
+   239  007FEA  0E00               	movlw	0
+   240  007FEC  6E80               	movwf	3968,c	;volatile
+   241                           
+   242                           ;main.c: 32: PORTB = 0;
+   243  007FEE  0E00               	movlw	0
+   244  007FF0  6E81               	movwf	3969,c	;volatile
+   245                           
+   246                           ;main.c: 33: PORTC = 0;
+   247  007FF2  0E00               	movlw	0
+   248  007FF4  6E82               	movwf	3970,c	;volatile
+   249                           
+   250                           ;main.c: 34: PORTD = 0x00;
+   251  007FF6  0E00               	movlw	0
+   252  007FF8  6E83               	movwf	3971,c	;volatile
+   253                           
+   254                           ;main.c: 35: PORTE = 0;
+   255  007FFA  0E00               	movlw	0
+   256  007FFC  6E84               	movwf	3972,c	;volatile
+   257  007FFE  0012               	return	
+   258  008000                     __end_of_configs:
+   259                           	opt stack 0
+   260  0000                     prodl	equ	0xFF3
+   261                           prodl	equ	0xFF3
+   262                           
+   263                           	psect	rparam
+   264  0000                     prodl	equ	0xFF3
+
+
+Data Sizes:
+    Strings     0
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMRAM           95      0       0
+    BANK0           160      0       0
+    BANK1           256      0       0
+    BANK2           256      0       0
+    BANK3           256      0       0
+    BANK4           256      0       0
+    BANK5           256      0       0
+    BANK6           256      0       0
+    BANK7           256      0       0
+
+Pointer List with Targets:
+
+    None.
+
+Critical Paths under _main in COMRAM
+
+    None.
+
+Critical Paths under _main in BANK0
+
+    None.
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK4
+
+    None.
+
+Critical Paths under _main in BANK5
+
+    None.
+
+Critical Paths under _main in BANK6
+
+    None.
+
+Critical Paths under _main in BANK7
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 0     0      0       0
+                            _configs
+                         _configsPWM
+ ---------------------------------------------------------------------------------
+ (1) _configsPWM                                           0     0      0       0
+ ---------------------------------------------------------------------------------
+ (1) _configs                                              0     0      0       0
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 1
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _configs
+   _configsPWM
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMRAM           5F      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMRAM              5F      0       0       1        0.0%
+STACK                0      0       0       2        0.0%
+DATA                 0      0       0       3        0.0%
+BITBANK0            A0      0       0       4        0.0%
+BANK0               A0      0       0       5        0.0%
+BITBANK1           100      0       0       6        0.0%
+BANK1              100      0       0       7        0.0%
+BITBANK2           100      0       0       8        0.0%
+BANK2              100      0       0       9        0.0%
+BITBANK3           100      0       0      10        0.0%
+BANK3              100      0       0      11        0.0%
+BITBANK4           100      0       0      12        0.0%
+BANK4              100      0       0      13        0.0%
+BITBANK5           100      0       0      14        0.0%
+BANK5              100      0       0      15        0.0%
+BITBANK6           100      0       0      16        0.0%
+BANK6              100      0       0      17        0.0%
+BITBANK7           100      0       0      18        0.0%
+BANK7              100      0       0      19        0.0%
+ABS                  0      0       0      20        0.0%
+BIGRAM             7FF      0       0      21        0.0%
+BITSFR               0      0       0      40        0.0%
+SFR                  0      0       0      40        0.0%
+
+
+Microchip Technology PIC18 Macro Assembler V1.32 build 58300 
+Symbol Table                                                                                   Thu Jul 31 23:20:44 2014
+
+                     l45 7FAC              __CFG_BOR$ON 000000              __CFG_BORV$1 000000  
+                    _PR2 000FCB             __CFG_FOSC$HS 000000             __CFG_LVP$OFF 000000  
+           __CFG_WDT$OFF 000000                     _TMR2 000FCC             __CFG_PWRT$ON 000000  
+                   _main 7FA4                     prodl 000FF3                     start 0000  
+          __CFG_MCLRE$ON 000000                    ?_main 0000                    _T2CON 000FCA  
+                  _PORTA 000F80                    _PORTB 000F81                    _PORTC 000F82  
+                  _PORTD 000F83                    _PORTE 000F84                    _TRISA 000F92  
+                  _TRISB 000F93                    _TRISC 000F94                    _TRISD 000F95  
+                  _TRISE 000F96          __end_of_configs 8000          __initialization 7F9E  
+           __end_of_main 7FAE                   ??_main 0000            __activetblptr 000000  
+        __CFG_CCP2MX$OFF 000000                   _ADCON1 000FC1                   _CCPR1L 000FBE  
+              ??_configs 0000               __accesstop 0060  __end_of__initialization 7F9E  
+        __CFG_PBADEN$OFF 000000           __pcstackCOMRAM 0000                  _CCP1CON 000FBD  
+             _configsPWM 7FAE                  __Hparam 0000                  __Lparam 0000  
+                __pcinit 7F9E                  __ramtop 0800                  __ptext0 7FA4  
+                __ptext1 7FAE                  __ptext2 7FD2                  _configs 7FD2  
+   end_of_initialization 7F9E              ?_configsPWM 0000                _TRISCbits 000F94  
+            _CCP1CONbits 000FBD      start_initialization 7F9E      __size_of_configsPWM 0024  
+               ?_configs 0000             ??_configsPWM 0000                 __Hrparam 0000  
+               __Lrparam 0000       __end_of_configsPWM 7FD2         __size_of_configs 002E  
+          __size_of_main 000A  

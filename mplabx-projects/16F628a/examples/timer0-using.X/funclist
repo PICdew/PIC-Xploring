@@ -1,0 +1,6 @@
+_ISR: CODE, 21 0 23
+_main: CODE, 58 0 6
+_timer0Init: CODE, 44 0 14
+__initialization: CODE, 17 0 2
+_interruptInit: CODE, 64 0 2
+Total: 47

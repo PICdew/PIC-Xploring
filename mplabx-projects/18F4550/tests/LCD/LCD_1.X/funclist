@@ -1,0 +1,9 @@
+_timerConfigs: CODE, 2144 0 10
+_main: CODE, 2052 0 38
+_timer0Configs: CODE, 2090 0 24
+__initialization: CODE, 2130 0 0
+_lowT0Value: SMALLCONST, 2050 0 1
+_configs: CODE, 2114 0 16
+_portbConfigs: CODE, 2154 0 10
+_highT0Value: SMALLCONST, 2049 0 1
+Total: 100

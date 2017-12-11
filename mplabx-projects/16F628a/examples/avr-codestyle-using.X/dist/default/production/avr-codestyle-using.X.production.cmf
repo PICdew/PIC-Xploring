@@ -1,0 +1,421 @@
+%CMF
+# %PSECTS Section
+# For each object file, details of its psects are enumerated here.
+# The begining of the section is indicated by %PSECTS.  The first
+# line indicates the name of the first object file, e.g.
+#    $foo.obj
+# Each line that follows describes a psect in that object file, until
+# the next object file.  The lines that describe a psect have the
+# format:
+#    <psect name> <class name> <space> <link address> <load addresses> <length> <delta>
+# All addresses and the length are given in unqualified hexadecimal
+# in delta units.  Any other numeric values are decimal.
+%PSECTS
+$C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.obj
+end_init CODE 0 10 10 1 2
+reset_vec CODE 0 0 0 1 2
+config CONFIG 0 2007 2007 1 2
+$dist/default/production\avr-codestyle-using.X.production.obj
+cinit CODE 0 11 11 8 2
+intentry CODE 0 4 4 C 2
+text11 CODE 0 C6 C6 1B 2
+text10 CODE 0 108 108 E 2
+text9 CODE 0 139 139 8 2
+text8 CODE 0 131 131 8 2
+text7 CODE 0 129 129 8 2
+text6 CODE 0 116 116 B 2
+text5 CODE 0 A9 A9 1D 2
+text4 CODE 0 8C 8C 1D 2
+text3 CODE 0 E1 E1 17 2
+text2 CODE 0 121 121 8 2
+text1 CODE 0 F8 F8 10 2
+maintext CODE 0 64 64 28 2
+cstackCOMMON COMMON 1 70 70 9 1
+dataCOMMON COMMON 1 7B 7B 2 1
+bssCOMMON COMMON 1 79 79 2 1
+strings STRING 0 19 19 4B 2
+idataCOMMON CODE 0 141 141 2 2
+# %UNUSED Section
+# This section enumerates the unused ranges of each CLASS. Each entry
+# is described on a single line as follows:
+#    <class name> <range> <delta>
+# Addresses given in the range are in hexadecimal and units of delta.
+%UNUSED
+BANK0 0020-006F 1
+BANK1 00A0-00EF 1
+BANK2 0120-014F 1
+CODE 0001-0003 2
+CODE 0143-07FF 2
+COMMON 007D-007D 1
+CONST 0001-0003 2
+CONST 0143-07FF 2
+EEDATA 2100-217F 2
+ENTRY 0001-0003 2
+ENTRY 0143-07FF 2
+IDLOC 2000-2003 2
+RAM 0020-006F 1
+RAM 00A0-00EF 1
+RAM 0120-014F 1
+SFR0 0000-001F 1
+SFR1 0080-009F 1
+SFR2 0100-011F 1
+SFR3 0180-01EF 1
+STACK 0020-006F 1
+STRCODE 0001-0003 2
+STRCODE 0143-07FF 2
+STRING 0001-0003 2
+STRING 0143-07FF 2
+# %LINETAB Section
+# This section enumerates the file/line to address mappings.
+# The beginning of the section is indicated by %LINETAB.
+# The first line indicates the name of the first object file, e.g.
+#   $foo.obj
+# Each line that follows describes a single mapping until the next
+# object file.  Mappings have the following format:
+#    <file name>:<line number> <address> <psect name> <class name>
+# The address is absolute and given given in unqualified hex 
+# in delta units of the psect. All mappings within an object file
+# are in ascending order of addresses.
+# All other numeric values are in decimal.
+%LINETAB
+$dist/default/production\avr-codestyle-using.X.production.obj
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":157 4 intentry CODE
+"C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.":295 11 cinit CODE
+"C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.":298 11 cinit CODE
+"C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.":323 11 cinit CODE
+"C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.":324 12 cinit CODE
+"C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.":329 13 cinit CODE
+"C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.":330 14 cinit CODE
+"C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.":331 15 cinit CODE
+"C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.":332 16 cinit CODE
+"C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.":338 17 cinit CODE
+"C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.":339 17 cinit CODE
+"C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.":340 18 cinit CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":52 64 maintext CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":53 64 maintext CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":54 6A maintext CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":55 6B maintext CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":56 6C maintext CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":57 6D maintext CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":59 6E maintext CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":60 72 maintext CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":61 77 maintext CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":62 78 maintext CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":63 7A maintext CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":64 7F maintext CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":65 80 maintext CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":66 85 maintext CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":68 86 maintext CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":58 8B maintext CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":100 8C text4 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":101 8C text4 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":102 8F text4 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":103 95 text4 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":104 99 text4 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":105 9C text4 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":106 A0 text4 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":107 A2 text4 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":108 A6 text4 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":109 A7 text4 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":110 A8 text4 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":113 A9 text5 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":114 A9 text5 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":115 AC text5 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":116 AE text5 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":117 B0 text5 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":118 B2 text5 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":119 B3 text5 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":120 BB text5 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":121 C1 text5 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":122 C5 text5 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":157 C6 text11 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":158 C6 text11 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":159 C8 text11 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":160 CC text11 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":161 CE text11 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":162 D0 text11 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":164 D6 text11 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":74 E1 text3 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":75 E1 text3 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":77 E5 text3 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":78 E9 text3 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":81 ED text3 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":82 F3 text3 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":83 F7 text3 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":92 F8 text1 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":93 F9 text1 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":94 FF text1 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":95 103 text1 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":93 107 text1 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":125 108 text10 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":126 108 text10 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":127 10E text10 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":128 114 text10 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":129 115 text10 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":150 116 text6 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":151 116 text6 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":152 11C text6 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":153 11D text6 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":154 120 text6 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":86 121 text2 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":87 122 text2 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":88 126 text2 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":89 128 text2 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":144 129 text7 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":145 129 text7 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":146 12F text7 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":147 130 text7 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":132 131 text8 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":133 131 text8 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":134 137 text8 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":135 138 text8 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":138 139 text9 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":139 139 text9 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":140 13F text9 CODE
+"C:\apes\docs\mplabx-projects\16F628a\examples\avr-codestyle-using.X\main.c":141 140 text9 CODE
+# %SYMTAB Section
+# An enumeration of all symbols in the program.
+# The beginning of the section is indicated by %SYMTAB.
+# Each line describes a single symbol as follows:
+#    <label> <value> [-]<load-adj> <class> <space> <psect> <file-name>
+# The value and load-adj are both in unqualified hexadecimal.
+# All other numeric values are in decimal.  The load-adj is the
+# quantity one needs to add to the symbol value in order to obtain the load
+# address of the symbol.  This value may be signed. If the symbol
+# was defined in a psect then <psect> will be "-". File-name
+# is the name of the object file in which the symbol was defined.
+%SYMTAB
+__S0 2008 0 ABS 0 - -
+__S1 7D 0 ABS 0 - -
+__S2 0 0 ABS 0 - -
+__S3 0 0 ABS 0 - -
+__end_of_pullUpConfig 242 0 CODE 0 text6 dist/default/production\avr-codestyle-using.X.production.obj
+_ISR 18C 0 CODE 0 text11 dist/default/production\avr-codestyle-using.X.production.obj
+__Hintentry 20 0 CODE 0 intentry -
+__Lintentry 8 0 CODE 0 intentry -
+__CFG_BOREN$ON 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+__pintentry 8 0 CODE 0 intentry dist/default/production\avr-codestyle-using.X.production.obj
+__CFG_PWRTE$ON 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+_PIE1 8C 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+_PIR1 C 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+_PCON 8E 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+_main C8 0 CODE 0 maintext dist/default/production\avr-codestyle-using.X.production.obj
+___sp 0 0 STACK 2 stack C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.obj
+btemp 7E 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+ltemp 7E 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+ttemp 7E 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+wtemp 7E 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+start 20 0 CODE 0 init C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.obj
+_tmr1High 7B 0 COMMON 1 dataCOMMON dist/default/production\avr-codestyle-using.X.production.obj
+_TMR1H F 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+_TMR1L E 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+_TRISA 85 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+_RCSTA 18 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+_TRISB 86 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+_TXREG 19 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+_PORTA 5 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+reset_vec 0 0 CODE 0 reset_vec C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.obj
+_PORTB 6 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+_SPBRG 99 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+_TXSTA 98 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+_T1CON 10 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+_CMCON 1F 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+ltemp0 7E 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+ttemp0 7E 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+wtemp0 7E 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+ltemp1 82 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+ttemp1 81 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+wtemp1 80 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+ltemp2 86 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+ttemp2 84 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+wtemp2 82 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+ltemp3 80 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+ttemp3 87 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+wtemp3 84 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+ttemp4 7F 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+wtemp4 86 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+wtemp5 88 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+wtemp6 7F 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+interrupt_function 8 0 CODE 0 intentry dist/default/production\avr-codestyle-using.X.production.obj
+_ledsEnviado 272 0 CODE 0 text9 dist/default/production\avr-codestyle-using.X.production.obj
+__Hconfig 4010 0 CONFIG 0 config -
+__Lconfig 400E 0 CONFIG 0 config -
+__end_of__stringtab 3E 0 STRING 0 strings dist/default/production\avr-codestyle-using.X.production.obj
+__Hram 0 0 ABS 0 ram -
+__Lram 0 0 ABS 0 ram -
+__end_of__stringdata C8 0 STRING 0 strings dist/default/production\avr-codestyle-using.X.production.obj
+__end_of_ISR 1C2 0 CODE 0 text11 dist/default/production\avr-codestyle-using.X.production.obj
+__Hfunctab 0 0 CODE 0 functab -
+__Lfunctab 0 0 CODE 0 functab -
+_OPTION_REG 81 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+__Hcommon 0 0 ABS 0 common -
+__Lcommon 0 0 ABS 0 common -
+__Heeprom_data 0 0 EEDATA 3 eeprom_data -
+__Leeprom_data 0 0 EEDATA 3 eeprom_data -
+___int_sp 0 0 STACK 2 stack C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.obj
+_usartSend 242 0 CODE 0 text2 dist/default/production\avr-codestyle-using.X.production.obj
+__Habs1 0 0 ABS 0 abs1 -
+__Labs1 0 0 ABS 0 abs1 -
+_INTCON B 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+__Hsfr0 0 0 ABS 0 sfr0 -
+__Lsfr0 0 0 ABS 0 sfr0 -
+__Hsfr1 0 0 ABS 0 sfr1 -
+__Lsfr1 0 0 ABS 0 sfr1 -
+__Hsfr2 0 0 ABS 0 sfr2 -
+__Lsfr2 0 0 ABS 0 sfr2 -
+__Hsfr3 0 0 ABS 0 sfr3 -
+__Lsfr3 0 0 ABS 0 sfr3 -
+__Hcode 0 0 ABS 0 code -
+__Lcode 0 0 ABS 0 code -
+stackhi 0 0 ABS 0 - C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.obj
+stacklo 0 0 ABS 0 - C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.obj
+saved_w 7E 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+__Hinit 20 0 CODE 0 init -
+__Linit 20 0 CODE 0 init -
+__end_of_main 118 0 CODE 0 maintext dist/default/production\avr-codestyle-using.X.production.obj
+__Htext 0 0 ABS 0 text -
+__Ltext 0 0 ABS 0 text -
+end_of_initialization 2E 0 CODE 0 cinit dist/default/production\avr-codestyle-using.X.production.obj
+__size_of_ISR 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+__stringtab 32 0 STRING 0 strings dist/default/production\avr-codestyle-using.X.production.obj
+_usartInit 1C2 0 CODE 0 text3 dist/default/production\avr-codestyle-using.X.production.obj
+__Hstrings 0 0 ABS 0 strings -
+__Lstrings 0 0 ABS 0 strings -
+__pstrings 32 0 STRING 0 strings dist/default/production\avr-codestyle-using.X.production.obj
+_ledsEnviando 262 0 CODE 0 text8 dist/default/production\avr-codestyle-using.X.production.obj
+__Hbank0 0 0 ABS 0 bank0 -
+__Lbank0 0 0 ABS 0 bank0 -
+__Hbank1 0 0 ABS 0 bank1 -
+__Lbank1 0 0 ABS 0 bank1 -
+__Hbank2 0 0 ABS 0 bank2 -
+__Lbank2 0 0 ABS 0 bank2 -
+__Hbank3 0 0 BANK3 1 bank3 -
+__Lbank3 0 0 BANK3 1 bank3 -
+___latbits 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+__Hpowerup 0 0 CODE 0 powerup -
+__Lpowerup 0 0 CODE 0 powerup -
+__end_of_usartPutStringConst 210 0 CODE 0 text1 dist/default/production\avr-codestyle-using.X.production.obj
+__ptext1 1F0 0 CODE 0 text1 dist/default/production\avr-codestyle-using.X.production.obj
+__ptext2 242 0 CODE 0 text2 dist/default/production\avr-codestyle-using.X.production.obj
+__ptext3 1C2 0 CODE 0 text3 dist/default/production\avr-codestyle-using.X.production.obj
+__ptext4 118 0 CODE 0 text4 dist/default/production\avr-codestyle-using.X.production.obj
+__ptext5 152 0 CODE 0 text5 dist/default/production\avr-codestyle-using.X.production.obj
+__ptext6 22C 0 CODE 0 text6 dist/default/production\avr-codestyle-using.X.production.obj
+_ledsConfig 210 0 CODE 0 text10 dist/default/production\avr-codestyle-using.X.production.obj
+__ptext7 252 0 CODE 0 text7 dist/default/production\avr-codestyle-using.X.production.obj
+__ptext8 262 0 CODE 0 text8 dist/default/production\avr-codestyle-using.X.production.obj
+__ptext9 272 0 CODE 0 text9 dist/default/production\avr-codestyle-using.X.production.obj
+__Hclrtext 0 0 ABS 0 clrtext -
+__Lclrtext 0 0 ABS 0 clrtext -
+__HdataCOMMON 0 0 ABS 0 dataCOMMON -
+__LdataCOMMON 0 0 ABS 0 dataCOMMON -
+__pdataCOMMON 7B 0 COMMON 1 dataCOMMON dist/default/production\avr-codestyle-using.X.production.obj
+__end_of__initialization 2E 0 CODE 0 cinit dist/default/production\avr-codestyle-using.X.production.obj
+__end_of_ledsEnviado 282 0 CODE 0 text9 dist/default/production\avr-codestyle-using.X.production.obj
+usartPutStringConst@dataPtr 77 0 COMMON 1 cstackCOMMON dist/default/production\avr-codestyle-using.X.production.obj
+__end_of_usartInit 1F0 0 CODE 0 text3 dist/default/production\avr-codestyle-using.X.production.obj
+__size_of_setTimeOut 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+__end_of_ledsStandBy 262 0 CODE 0 text7 dist/default/production\avr-codestyle-using.X.production.obj
+__end_of_ledsEnviando 272 0 CODE 0 text8 dist/default/production\avr-codestyle-using.X.production.obj
+__Hidloc 0 0 IDLOC 0 idloc -
+__Lidloc 0 0 IDLOC 0 idloc -
+__Hstack 0 0 STACK 2 stack -
+__Lstack 0 0 STACK 2 stack -
+__Hspace_0 2008 0 ABS 0 - -
+__Lspace_0 0 0 ABS 0 - -
+__size_of_usartSend 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+_tmr1Low 7C 0 COMMON 1 dataCOMMON dist/default/production\avr-codestyle-using.X.production.obj
+__Hspace_1 7D 0 ABS 0 - -
+__Lspace_1 0 0 ABS 0 - -
+__Hspace_2 0 0 ABS 0 - -
+__Lspace_2 0 0 ABS 0 - -
+__Hcinit 32 0 CODE 0 cinit -
+__Lcinit 22 0 CODE 0 cinit -
+__Hspace_3 0 0 ABS 0 - -
+__Lspace_3 0 0 ABS 0 - -
+__size_of_main 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+__size_of_ledsStandBy 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+_timer1Init 118 0 CODE 0 text4 dist/default/production\avr-codestyle-using.X.production.obj
+__size_of_ledsConfig 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+__end_of_timer1Init 152 0 CODE 0 text4 dist/default/production\avr-codestyle-using.X.production.obj
+__size_of_ledsEnviado 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+__size_of_usartInit 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+__ptext10 210 0 CODE 0 text10 dist/default/production\avr-codestyle-using.X.production.obj
+__ptext11 18C 0 CODE 0 text11 dist/default/production\avr-codestyle-using.X.production.obj
+_setTimeOut 152 0 CODE 0 text5 dist/default/production\avr-codestyle-using.X.production.obj
+__size_of_ledsEnviando 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+__HbssCOMMON 0 0 ABS 0 bssCOMMON -
+__LbssCOMMON 0 0 ABS 0 bssCOMMON -
+__end_of_setTimeOut 18C 0 CODE 0 text5 dist/default/production\avr-codestyle-using.X.production.obj
+__pbssCOMMON 79 0 COMMON 1 bssCOMMON dist/default/production\avr-codestyle-using.X.production.obj
+__Hend_init 22 0 CODE 0 end_init -
+__Lend_init 20 0 CODE 0 end_init -
+__end_of_usartSend 252 0 CODE 0 text2 dist/default/production\avr-codestyle-using.X.production.obj
+usartSend@data 75 0 COMMON 1 cstackCOMMON dist/default/production\avr-codestyle-using.X.production.obj
+__Hreset_vec 2 0 CODE 0 reset_vec -
+__Lreset_vec 0 0 CODE 0 reset_vec -
+_pullUpConfig 22C 0 CODE 0 text6 dist/default/production\avr-codestyle-using.X.production.obj
+__stringdata 3E 0 STRING 0 strings dist/default/production\avr-codestyle-using.X.production.obj
+_ledsStandBy 252 0 CODE 0 text7 dist/default/production\avr-codestyle-using.X.production.obj
+intlevel0 0 0 CODE 0 functab C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.obj
+__CFG_WDTE$OFF 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+intlevel1 0 0 CODE 0 functab C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.obj
+intlevel2 0 0 CODE 0 functab C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.obj
+intlevel3 0 0 CODE 0 functab C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.obj
+__size_of_timer1Init 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+intlevel4 0 0 CODE 0 functab C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.obj
+setTimeOut@interval 75 0 COMMON 1 cstackCOMMON dist/default/production\avr-codestyle-using.X.production.obj
+intlevel5 0 0 CODE 0 functab C:\Users\THIAGO~1\AppData\Local\Temp\s3u0.obj
+__size_of_pullUpConfig 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+__HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
+__pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/production\avr-codestyle-using.X.production.obj
+__size_of_usartPutStringConst 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+__CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+start_initialization 22 0 CODE 0 cinit dist/default/production\avr-codestyle-using.X.production.obj
+__Hmaintext 0 0 ABS 0 maintext -
+__Lmaintext 0 0 ABS 0 maintext -
+__pmaintext C8 0 CODE 0 maintext dist/default/production\avr-codestyle-using.X.production.obj
+__CFG_MCLRE$ON 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+__HidataCOMMON 0 0 ABS 0 idataCOMMON -
+__LidataCOMMON 0 0 ABS 0 idataCOMMON -
+__pidataCOMMON 282 0 CODE 0 idataCOMMON dist/default/production\avr-codestyle-using.X.production.obj
+__CFG_FOSC$INTOSCIO 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+__initialization 22 0 CODE 0 cinit dist/default/production\avr-codestyle-using.X.production.obj
+__stringbase 3C 0 STRING 0 strings dist/default/production\avr-codestyle-using.X.production.obj
+__CFG_CP$OFF 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+_timerCounter 79 0 COMMON 1 bssCOMMON dist/default/production\avr-codestyle-using.X.production.obj
+__end_of_ledsConfig 22C 0 CODE 0 text10 dist/default/production\avr-codestyle-using.X.production.obj
+__CFG_LVP$OFF 0 0 ABS 0 - dist/default/production\avr-codestyle-using.X.production.obj
+_usartPutStringConst 1F0 0 CODE 0 text1 dist/default/production\avr-codestyle-using.X.production.obj
+# %SPLITSTAB Section
+# This section enumerates all the psect splits performed by the assembler.
+# The beginning of the section is indicated by %SPLITSTAB.
+# Each line is a record a particular split, where the parent psect in on
+# the left and the child on the right.  Note that a child psect is always
+# split form the top of the parent psect. All splits from a given parent
+# are listed in the order in which they occurred.
+%SPLITSTAB
+# %DABS Section
+# This section contains a table of all usuage of the assember
+# directive DABS in the program. Each line has the following format:
+#   <name> <space> <address> <size>
+# If the DABS was originally labelled then that shall be <name>,
+# otherwise name will be "-".  The <space> number is in decimal.
+# <address> and <size> are in byte units as unqaulified hexadecimal
+%DABS
+- 1 7E 2
+# %SEGMENTS Section
+# This sections enumerates the segments of the program.  Each segment
+# is described on a single line as follows:
+#    <name> <space> <link address> <file address> <size> <delta>
+# Addresses and size are in unqualified hexadecimal.  The link address
+# and size are in units of delta. The file address is in units of bytes.
+# All other numeric quantities are in decimal.
+%SEGMENTS
+reset_vec 0 0 0 1 2
+intentry 0 4 8 15 2
+config 0 2007 400E 1 2
+cstackCOMMON 1 70 70 D 1
+strings 0 19 32 4B 2
+maintext 0 64 C8 DF 2
